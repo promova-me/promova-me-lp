@@ -1,0 +1,70 @@
+section.preview-content {
+
+    margin: 0 0 80px;
+
+    .left {
+        .slider {
+            width: 445px;
+            .lSSlideOuter .lSPager.lSGallery {
+                li {
+                    height: 96px !important;
+                }
+                img {
+                    width: 100% !important;
+                    overflow: hidden !important;
+                }
+            }
+            ul {
+                list-style: none outside none;
+                padding-left: 0;
+                margin-bottom:0;
+            }
+            li {
+                display: block;
+                float: left;
+                margin-right: 6px;
+                cursor:pointer;
+            }
+            img {
+                display: block;
+                height: auto;
+                max-width: 100%;
+            }
+        }
+    }
+
+    .right {
+        .title {
+            color: rgba(40, 45, 57, 0.3);
+            font-family: "Avenir Black";
+            font-size: 20px;
+            font-weight: 900;
+            letter-spacing: 0.38px;
+            padding-bottom: 10px;
+        }
+        .sub-title {
+            color: @green;
+            font-family: "Avenir Black";
+            font-size: 36px;
+            font-weight: 900;
+            line-height: 50px;
+            padding-bottom: 40px;
+        }
+        .description-list {
+            color: rgba(40, 45, 57, 0.6);
+            font-family: "Avenir Book";
+            font-size: 22px;
+            font-weight: 300;
+            line-height: 36px;
+            list-style: none;
+            padding: 0;
+            li i {
+                color: @green;
+            }
+        }
+        .cta {
+            max-width: 285px;
+        }
+    }
+
+}

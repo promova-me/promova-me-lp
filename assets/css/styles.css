@@ -1,0 +1,319 @@
+/* ============= DEFAULT SETTINGS ============== */
+/* ============================================= */
+@font-face {
+  font-family: "Chewy Regular";
+  src: url("/assets/fonts/Chewy-Regular.ttf");
+}
+@font-face {
+  font-family: "Avenir Black";
+  src: url("/assets/fonts/AvenirLTStd-Black.otf");
+}
+@font-face {
+  font-family: "Avenir Book";
+  src: url("/assets/fonts/AvenirLTStd-Book.otf");
+}
+@font-face {
+  font-family: "Avenir Roman";
+  src: url("/assets/fonts/AvenirLTStd-Roman.otf");
+}
+* {
+  -webkit-font-smoothing: antialiased;
+  -webkit-perspective-origin: 50% 50%;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+a:hover,
+a:focus {
+  color: inherit;
+  text-decoration: none;
+}
+i {
+  font-style: normal;
+}
+.h1,
+.h2,
+.h3,
+h1,
+h2,
+h3 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+textarea {
+  outline: none;
+}
+.cta {
+  border-radius: 30px;
+  display: flex;
+  width: 100%;
+  max-width: 255px;
+  height: 64px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+.cta span {
+  font-family: "Avenir Black";
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 0.38px;
+  padding-top: 6px;
+}
+.cta-white {
+  background-color: #ffffff;
+}
+.cta-white span {
+  color: #00cc02;
+}
+.cta-green {
+  background-color: #00cc02;
+}
+.cta-green span {
+  color: #faee58;
+}
+header {
+  background-color: #00cc02;
+  min-height: 80px;
+}
+header ul li.nav-item {
+  padding: 15px 0 0;
+}
+header ul li.nav-item a {
+  color: #ffffff;
+  font-family: "Avenir Black";
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 12px;
+}
+header ul li.nav-item a.active {
+  border-bottom: 5px solid #fff;
+}
+section.hero {
+  background-color: #00cc02;
+  padding: 20px 0 180px;
+}
+section.hero .left .desc-top {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Avenir Black";
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 0px;
+  text-transform: uppercase;
+  position: relative;
+  top: 5px;
+}
+section.hero .left .title {
+  color: #faee58;
+  font-family: "Chewy Regular";
+  font-size: 102px;
+  font-weight: 400;
+  line-height: 120px;
+  text-transform: uppercase;
+}
+section.hero .left .title span {
+  font-size: 153px;
+}
+section.hero .left .desc-bottom {
+  color: #ffffff;
+  font-family: "Avenir Book";
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  max-width: 520px;
+}
+section.hero .left .cta {
+  max-width: 255px;
+  margin-top: 40px;
+}
+section.hero .right .box-form {
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 24px;
+  border: 0 solid #454545;
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 350px;
+  padding: 25px 20px 10px;
+}
+section.hero .right .box-form .title-form {
+  color: #000000;
+  font-family: "Avenir Black";
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 28px;
+  text-align: center;
+}
+section.hero .right .box-form form .form-group {
+  margin: 0;
+  display: flex;
+}
+section.hero .right .box-form form .form-group input,
+section.hero .right .box-form form .form-group select {
+  height: 48px;
+  border: 1px solid #e5e5e4;
+  background-color: #ffffff;
+  border-radius: 0px;
+  font-family: "Avenir Book";
+  font-size: 15px;
+  font-weight: 500;
+}
+section.hero .right .box-form form .form-group input:focus,
+section.hero .right .box-form form .form-group select:focus {
+  box-shadow: inherit;
+}
+section.hero .right .box-form form .form-group input::placeholder,
+section.hero .right .box-form form .form-group select::placeholder {
+  color: #9e9e9e;
+}
+section.hero .right .box-form form .form-group input:disabled,
+section.hero .right .box-form form .form-group select:disabled {
+  color: #9e9e9e;
+}
+section.hero .right .box-form form .form-group.child {
+  padding-top: 20px;
+}
+section.hero .right .box-form form .btn-download-ebook {
+  border-radius: 26px;
+  background-color: #00cc02;
+  display: flex;
+  width: 100%;
+  height: 52px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+section.hero .right .box-form form .btn-download-ebook span {
+  color: #ffffff;
+  font-family: "Chewy Regular";
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+section.hero .right .box-form .terms {
+  max-width: 260px;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+section.hero .right .box-form .terms h5 {
+  color: #bdbdbd;
+  font-family: "Avenir Book";
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 16px;
+  text-align: center;
+}
+section.health-cards {
+  position: relative;
+  top: -126px;
+}
+section.health-cards .card {
+  height: 240px;
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 24px;
+  border: 0 solid #454545;
+  background-color: #ffffff;
+  padding-top: 58px;
+}
+section.health-cards .card .title-card {
+  color: #282d39;
+  font-family: "Avenir Black";
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  line-height: 30px;
+  text-align: center;
+  padding-bottom: 16px;
+}
+section.health-cards .card .text-card {
+  color: rgba(40, 45, 57, 0.6);
+  font-family: "Avenir Book";
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 28px;
+  text-align: center;
+  max-width: 240px;
+  margin: 0 auto;
+}
+section.preview-content {
+  margin: 0 0 80px;
+}
+section.preview-content .left .slider {
+  width: 445px;
+}
+section.preview-content .left .slider .lSSlideOuter .lSPager.lSGallery li {
+  height: 96px !important;
+}
+section.preview-content .left .slider .lSSlideOuter .lSPager.lSGallery img {
+  width: 100% !important;
+  overflow: hidden !important;
+}
+section.preview-content .left .slider ul {
+  list-style: none outside none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+section.preview-content .left .slider li {
+  display: block;
+  float: left;
+  margin-right: 6px;
+  cursor: pointer;
+}
+section.preview-content .left .slider img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+section.preview-content .right .title {
+  color: rgba(40, 45, 57, 0.3);
+  font-family: "Avenir Black";
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 0.38px;
+  padding-bottom: 10px;
+}
+section.preview-content .right .sub-title {
+  color: #00cc02;
+  font-family: "Avenir Black";
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 50px;
+  padding-bottom: 40px;
+}
+section.preview-content .right .description-list {
+  color: rgba(40, 45, 57, 0.6);
+  font-family: "Avenir Book";
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 36px;
+  list-style: none;
+  padding: 0;
+}
+section.preview-content .right .description-list li i {
+  color: #00cc02;
+}
+section.preview-content .right .cta {
+  max-width: 285px;
+}
+html {
+  overflow-x: hidden;
+  opacity: 1 !important;
+  transition: opacity 0.2s ease-in-out;
+  font-family: "Avenir Book", "ff-prater-sans-web", "OpenSans", "Open Sans";
+  background-color: #f1f3f4;
+}
+html body {
+  overflow-x: hidden;
+  display: block;
+  margin: 0 auto;
+  background-color: white;
+  height: initial;
+}
+html body .svg {
+  pointer-events: none;
+}
