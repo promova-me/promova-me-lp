@@ -1,7 +1,29 @@
 section.hero {
 
     background-color: @green;
-    padding: 20px 0 180px;
+    background-image: url("/assets/images/bg-green.png");
+    background-size: contain;
+    padding: 20px 0 220px;
+
+    .header {
+        min-height: 80px;
+
+        ul {
+            li.nav-item {
+                padding: 15px 0 0;
+                a {
+                    color: #ffffff;
+                    font-family: "Avenir Black";
+                    font-size: 18px;
+                    font-weight: 900;
+                    line-height: 12px;
+                    &.active {
+                        border-bottom: 5px solid #fff;
+                    }
+                }
+            }
+        }
+    }
 
     .left {
         .desc-top {

@@ -77,25 +77,46 @@ textarea {
   color: #faee58;
 }
 header {
+  /*background-color: #00cc02;
+    min-height: 80px;
+
+    ul {
+        li.nav-item {
+            padding: 15px 0 0;
+            a {
+                color: #ffffff;
+                font-family: "Avenir Black";
+                font-size: 18px;
+                font-weight: 900;
+                line-height: 12px;
+                &.active {
+                    border-bottom: 5px solid #fff;
+                }
+            }
+        }
+    }*/
+}
+section.hero {
   background-color: #00cc02;
+  background-image: url("/assets/images/bg-green.png");
+  background-size: contain;
+  padding: 20px 0 220px;
+}
+section.hero .header {
   min-height: 80px;
 }
-header ul li.nav-item {
+section.hero .header ul li.nav-item {
   padding: 15px 0 0;
 }
-header ul li.nav-item a {
+section.hero .header ul li.nav-item a {
   color: #ffffff;
   font-family: "Avenir Black";
   font-size: 18px;
   font-weight: 900;
   line-height: 12px;
 }
-header ul li.nav-item a.active {
+section.hero .header ul li.nav-item a.active {
   border-bottom: 5px solid #fff;
-}
-section.hero {
-  background-color: #00cc02;
-  padding: 20px 0 180px;
 }
 section.hero .left .desc-top {
   color: rgba(255, 255, 255, 0.7);
@@ -237,14 +258,20 @@ section.health-cards .card .text-card {
   font-weight: 300;
   line-height: 28px;
   text-align: center;
-  max-width: 240px;
+  max-width: 290px;
   margin: 0 auto;
 }
 section.preview-content {
   margin: 0 0 80px;
 }
 section.preview-content .left .slider {
-  width: 445px;
+  width: 100%;
+  max-width: 500px;
+}
+section.preview-content .left .slider .lSSlideWrapper {
+  border-radius: 20px;
+  border: 0 solid #454545;
+  background-color: #ffffff !important;
 }
 section.preview-content .left .slider .lSSlideOuter .lSPager.lSGallery li {
   height: 96px !important;
@@ -299,6 +326,111 @@ section.preview-content .right .description-list li i {
 }
 section.preview-content .right .cta {
   max-width: 285px;
+}
+section.help-parents {
+  background-color: #faee58;
+  padding: 80px 0;
+}
+section.help-parents .left .title {
+  color: #282d39;
+  font-family: "Avenir Black";
+  font-size: 35px;
+  font-weight: 900;
+  letter-spacing: 0.88px;
+  line-height: 50px;
+}
+section.help-parents .left .text {
+  padding-top: 20px;
+  color: rgba(40, 45, 57, 0.6);
+  font-family: "Avenir Book";
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 36px;
+}
+section.help-parents .left .cta {
+  max-width: 304px;
+}
+section.help-parents .right {
+  position: relative;
+}
+section.help-parents .right .image-children {
+  position: absolute;
+  width: 42vw;
+  bottom: -80px;
+  left: -5%;
+}
+section.help-parents .right .image-children img {
+  width: 100%;
+  max-width: 735px;
+  min-width: 650px;
+}
+footer {
+  background-color: #00cc02;
+  min-height: 140px;
+}
+footer .container {
+  display: flex;
+  align-items: center;
+  padding: 50px 0;
+  justify-content: space-between;
+}
+footer .container .left {
+  display: flex;
+  align-items: flex-end;
+}
+footer .container .left .image-logo {
+  max-width: 255px;
+}
+footer .container .left .image-logo img {
+  width: 100%;
+}
+footer .container .left .menu-footer {
+  color: #ffffff;
+  font-family: "Avenir Black";
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 0.3px;
+  padding-left: 20px;
+}
+footer .container .left .menu-footer a {
+  padding: 0 10px;
+}
+footer .container .right #social-media {
+  position: relative;
+  display: flex;
+  margin-bottom: 0;
+}
+footer .container .right #social-media li {
+  margin: 0 2px;
+  padding: 0;
+  list-style: none;
+  top: 0;
+  width: 41px;
+}
+footer .container .right #social-media li#youtube {
+  background: url('/assets/images/social.png') 0 0;
+  background-size: cover;
+}
+footer .container .right #social-media li#twitter {
+  background: url('/assets/images/social.png') -46px 0;
+  background-size: cover;
+}
+footer .container .right #social-media li#linkedin {
+  background: url('/assets/images/social.png') -92px 0;
+  background-size: cover;
+}
+footer .container .right #social-media li#instagram {
+  background: url('/assets/images/social.png') -138px 0;
+  background-size: cover;
+}
+footer .container .right #social-media li#facebook {
+  background: url('/assets/images/social.png') -184px 0;
+  background-size: cover;
+}
+footer .container .right #social-media li,
+footer .container .right #social-media a {
+  height: 40px;
+  display: block;
 }
 html {
   overflow-x: hidden;

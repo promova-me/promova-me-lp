@@ -1,0 +1,69 @@
+footer {
+    background-color: @green;
+    min-height: 140px;
+    .container {
+        display: flex;
+        align-items: center;
+        padding: 50px 0;
+        justify-content: space-between;
+        .left {
+            display: flex;
+            align-items: flex-end;
+            .image-logo {
+                max-width: 255px;
+                img {
+                    width: 100%;
+                }
+            }
+            .menu-footer {
+                color: #ffffff;
+                font-family: "Avenir Black";
+                font-size: 16px;
+                font-weight: 900;
+                letter-spacing: 0.3px;
+                padding-left: 20px;
+                a {
+                    padding: 0 10px;
+                }
+            }
+        }
+        .right {
+            #social-media {
+                position: relative;
+                display: flex;
+                margin-bottom: 0;
+                li {
+                    margin: 0 2px;
+                    padding: 0;
+                    list-style: none;
+                    top: 0;
+                    width: 41px;
+                    &#youtube {
+                        background: url('/assets/images/social.png') 0 0;
+                        background-size: cover;
+                    }
+                    &#twitter {
+                        background: url('/assets/images/social.png') -46px 0;
+                        background-size: cover;
+                    }
+                    &#linkedin {
+                        background: url('/assets/images/social.png') -92px 0;
+                        background-size: cover;
+                    }
+                    &#instagram {
+                        background: url('/assets/images/social.png') -138px 0;
+                        background-size: cover;
+                    }
+                    &#facebook {
+                        background: url('/assets/images/social.png') -184px 0;
+                        background-size: cover;
+                    }
+                }
+                li, a {
+                    height: 40px;
+                    display: block;
+                }
+            }
+        }
+    }
+}

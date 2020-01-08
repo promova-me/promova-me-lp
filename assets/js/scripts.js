@@ -3,7 +3,7 @@ $(function() {
         gallery: true,
         item: 1,
         slideMargin: 0,
-        thumbItem: 4,
+        thumbItem: 3,
         autoWidth: false,
 
         galleryMargin: 20,
@@ -12,6 +12,6 @@ $(function() {
         speed: 1000,
         auto: true,
         loop: true,
-        pause: 3000,
+        pause: 5000,
     });
 });
