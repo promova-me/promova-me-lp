@@ -2,35 +2,63 @@ section.preview-content {
 
     margin: 0 0 80px;
 
+    @media @breakTabletMax {
+        margin: -30px 0 80px;
+    }
+
     .left {
+        @media @breakTabletMin {
+            order: 2;
+            padding-top: 30px;
+        }
+
         .slider {
             width: 100%;
             max-width: 500px;
+
+            @media @breakTabletMin {
+                max-width: 350px;
+                margin: 0 auto;
+
+                .lSPager {
+                    margin: 0 auto;
+                    display: table;
+                }
+            }
+
             .lSSlideWrapper {
                 border-radius: 20px;
                 border: 0 solid #454545;
                 background-color: #ffffff !important;
             }
+
             .lSSlideOuter .lSPager.lSGallery {
                 li {
                     height: 96px !important;
                 }
+
                 img {
                     width: 100% !important;
                     overflow: hidden !important;
                 }
             }
+
             ul {
                 list-style: none outside none;
                 padding-left: 0;
                 margin-bottom:0;
             }
+
             li {
                 display: block;
                 float: left;
                 margin-right: 6px;
                 cursor:pointer;
+                @media @breakTabletMin {
+                    margin: 0 auto;
+                }
             }
+
             img {
                 display: block;
                 height: auto;
@@ -40,6 +68,10 @@ section.preview-content {
     }
 
     .right {
+        @media @breakTabletMin {
+            order: 1;
+        }
+
         .title {
             color: rgba(40, 45, 57, 0.3);
             font-family: "Avenir Black";
@@ -47,7 +79,16 @@ section.preview-content {
             font-weight: 900;
             letter-spacing: 0.38px;
             padding-bottom: 10px;
+
+            @media @breakTabletMax {
+                font-size: 18px;
+            }
+
+            @media @breakTabletMin {
+                text-align: center;
+            }
         }
+
         .sub-title {
             color: @green;
             font-family: "Avenir Black";
@@ -55,7 +96,22 @@ section.preview-content {
             font-weight: 900;
             line-height: 50px;
             padding-bottom: 40px;
+
+            @media @breakTabletMax {
+                font-size: 27px;
+                line-height: 32px;
+                padding-bottom: 25px;
+            }
+
+            @media @breakTabletMin {
+                text-align: center;
+            }
+
+            @media screen and (max-width: 360px){
+                font-size: 24px;
+            }
         }
+
         .description-list {
             color: rgba(40, 45, 57, 0.6);
             font-family: "Avenir Book";
@@ -64,12 +120,44 @@ section.preview-content {
             line-height: 36px;
             list-style: none;
             padding: 0;
+
             li i {
                 color: @green;
             }
+
+            @media @breakTabletMax {
+                font-size: 17px;
+                line-height: 36px;
+            }
+
+            @media @breakTabletMin {
+                max-width: 320px;
+                margin: 0 auto;
+            }
+
+            @media screen and (max-width: 345px){
+                font-size: 4.9vw;
+                line-height: 10vw;
+            }
         }
-        .cta {
-            max-width: 285px;
+    }
+
+    .cta {
+        max-width: 285px;
+
+        &.desktop {
+            @media @breakTabletMin {
+                display: none;
+            }
+        }
+    }
+
+    .bottom {
+        display: none;
+        @media @breakTabletMin {
+            display: flex;
+            order: 3;
+            justify-content: center;
         }
     }
 

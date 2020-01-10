@@ -5,21 +5,84 @@ section.hero {
     background-size: contain;
     padding: 20px 0 220px;
 
+    @media @breakTabletMax{
+        padding: 20px 0 150px;
+    }
+
+    @media @breakTabletMin {
+        top: -105px;
+    }
+
     .header {
         min-height: 80px;
 
+        @media @breakTabletMin {
+            display: flex;
+        }
+
         ul {
-            li.nav-item {
-                padding: 15px 0 0;
+            position: relative;
+            float: right;
+
+            @media @breakTabletMin {
+                padding: 0;
+                margin: 0 auto;
+            }
+
+            li {
+                display: inline;
+                text-align: center;
+                &.one {
+                    a {
+                        width: 150px;
+                        @media screen and (max-width: 370px){
+                            width: 100px;
+                        }
+                    }
+                    &.active {
+                        &~hr {
+                            width: 150px;
+                            margin-left: 0;
+                            @media screen and (max-width: 370px){
+                                width: 100px;
+                            }
+                        }
+                    }
+                }
+                &.two.active {
+                    &~hr {
+                        margin-left: 150px;
+                        @media screen and (max-width: 370px){
+                            margin-left: 100px;
+                        }
+                    }
+                }
                 a {
-                    color: #ffffff;
+                    display: inline-block;
+                    width: 180px;
+                    padding: .75rem 0;
+                    margin: 0;
+                    text-decoration: none;
+                    color: @white;
                     font-family: "Avenir Black";
                     font-size: 18px;
                     font-weight: 900;
                     line-height: 12px;
-                    &.active {
-                        border-bottom: 5px solid #fff;
+                    @media screen and (max-width: 370px){
+                        width: 140px;
+                        font-size: 16px;
                     }
+                }
+            }
+            hr {
+                height: .25rem;
+                width: 180px;
+                margin: 0;
+                background: @white;
+                border: none;
+                transition: .3s ease-in-out;
+                @media screen and (max-width: 370px){
+                    width: 140px;
                 }
             }
         }
@@ -35,6 +98,19 @@ section.hero {
             text-transform: uppercase;
             position: relative;
             top: 5px;
+
+            @media @breakTabletMax{
+                padding-top: 15px;
+            }
+
+            @media @breakTabletMin {
+                padding-top: 0;
+                text-align: center;
+            }
+
+            @media screen and (max-width: 540px){
+                font-size: 4vw;
+            }
         }
         .title {
             color: @yellow;
@@ -43,8 +119,40 @@ section.hero {
             font-weight: 400;
             line-height: 120px;
             text-transform: uppercase;
+
             span {
                 font-size: 153px;
+            }
+
+            @media @breakDesk{
+                font-size: 98px;
+            }
+
+            @media @breakTabletMax{
+                font-size: 52px;
+                line-height: 70px;
+                padding-top: 15px;
+                span {
+                    font-size: 83px;
+                }
+            }
+
+            @media @breakTabletMin {
+                font-size: 82px;
+                line-height: 104px;
+                padding-top: 0;
+                text-align: center;
+                span {
+                    font-size: 126px;
+                }
+            }
+
+            @media screen and (max-width: 540px){
+                font-size: 14.6vw;
+                line-height: 19vw;
+                span {
+                    font-size: 23vw;
+                }
             }
         }
         .desc-bottom {
@@ -54,10 +162,25 @@ section.hero {
             font-weight: 500;
             line-height: 36px;
             max-width: 520px;
+            @media @breakTabletMax{
+                font-size: 22px;
+            }
+            @media @breakTabletMin {
+                font-size: 20px;
+                line-height: 28px;
+                text-align: center;
+            }
+            @media screen and (max-width: 540px){
+                font-size: 4.2vw;
+                line-height: 5vw;
+            }
         }
         .cta {
             max-width: 255px;
             margin-top: 40px;
+            @media @breakTabletMin {
+                margin: 20px auto 0;
+            }
         }
     }
 
@@ -71,6 +194,10 @@ section.hero {
             max-width: 350px;
             padding: 25px 20px 10px;
 
+            @media @breakTabletMin {
+                margin: 40px auto 10px;
+            }
+
             .title-form {
                 color: @black;
                 font-family: "Avenir Black";
@@ -78,6 +205,9 @@ section.hero {
                 font-weight: 900;
                 line-height: 28px;
                 text-align: center;
+                @media @breakTabletMax{
+                    font-size: 18px;
+                }
             }
 
             form {
