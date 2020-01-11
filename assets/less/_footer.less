@@ -6,9 +6,25 @@ footer {
         align-items: center;
         padding: 50px 0;
         justify-content: space-between;
+
+        @media @breakTabletMin {
+            flex-direction: column;
+            padding: 50px 15px;
+        }
+
+        @media @breakMobileMax {
+            padding: 30px 15px;
+        }
+
         .left {
             display: flex;
             align-items: flex-end;
+
+            @media @breakTabletMin {
+                flex-direction: column;
+                align-items: center;
+            }
+
             .image-logo {
                 max-width: 255px;
                 img {
@@ -22,8 +38,24 @@ footer {
                 font-weight: 900;
                 letter-spacing: 0.3px;
                 padding-left: 20px;
+
+                @media @breakTabletMax {
+                    text-align: center;
+                }
+
+                @media @breakTabletMin {
+                    padding: 20px 0;
+                    display: flex;
+                    flex-direction: column;
+                }
+
                 a {
                     padding: 0 10px;
+                    @media @breakTabletMax {
+                        &:nth-of-type(2){
+                            white-space: nowrap;
+                        }
+                    }
                 }
             }
         }
@@ -32,6 +64,11 @@ footer {
                 position: relative;
                 display: flex;
                 margin-bottom: 0;
+
+                @media @breakTabletMin {
+                    padding: 0;
+                }
+
                 li {
                     margin: 0 2px;
                     padding: 0;
@@ -55,7 +92,7 @@ footer {
                         background-size: cover;
                     }
                     &#facebook {
-                        background: url('/assets/images/social.png') -184px 0;
+                        background: url('/assets/images/social.png') -183px 0;
                         background-size: cover;
                     }
                 }
@@ -63,6 +100,37 @@ footer {
                     height: 40px;
                     display: block;
                 }
+            }
+        }
+    }
+    .additional_info
+    {
+        height: 30px;
+        background-color: rgba(40, 45, 57, 0.1);
+        font-family: "Avenir Book";
+        font-size: 13px;
+        font-weight: 600;
+        width: 100%;
+
+        @media screen and (max-width: 1320px) {
+            padding: 10px;
+            display: inline-table;
+        }
+
+        p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .rights {
+            display: block;
+            text-align: center;
+
+            @media screen and (min-width: 1319px) {
+                clear: both;
+                position: relative;
+                transform: translateY(-50%);
+                top: 50%;
             }
         }
     }

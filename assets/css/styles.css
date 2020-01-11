@@ -76,6 +76,14 @@ textarea {
 .cta-green span {
   color: #faee58;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
 header {
   /*background-color: #00cc02;
     min-height: 80px;
@@ -297,7 +305,7 @@ section.hero .left .cta {
     margin: 20px auto 0;
   }
 }
-section.hero .right .box-form {
+section.hero .right .box {
   box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.15);
   border-radius: 24px;
   border: 0 solid #454545;
@@ -305,13 +313,14 @@ section.hero .right .box-form {
   width: 100%;
   max-width: 350px;
   padding: 25px 20px 10px;
+  min-height: 453px;
 }
 @media screen and (max-width: 767px) {
-  section.hero .right .box-form {
+  section.hero .right .box {
     margin: 40px auto 10px;
   }
 }
-section.hero .right .box-form .title-form {
+section.hero .right .box .lead-form .title-form {
   color: #000000;
   font-family: "Avenir Black";
   font-size: 20px;
@@ -320,16 +329,16 @@ section.hero .right .box-form .title-form {
   text-align: center;
 }
 @media screen and (max-width: 991px) {
-  section.hero .right .box-form .title-form {
+  section.hero .right .box .lead-form .title-form {
     font-size: 18px;
   }
 }
-section.hero .right .box-form form .form-group {
+section.hero .right .box .lead-form form .form-group {
   margin: 0;
   display: flex;
 }
-section.hero .right .box-form form .form-group input,
-section.hero .right .box-form form .form-group select {
+section.hero .right .box .lead-form form .form-group input,
+section.hero .right .box .lead-form form .form-group select {
   height: 48px;
   border: 1px solid #e5e5e4;
   background-color: #ffffff;
@@ -337,23 +346,25 @@ section.hero .right .box-form form .form-group select {
   font-family: "Avenir Book";
   font-size: 15px;
   font-weight: 500;
+  padding: 6px 16px 0;
 }
-section.hero .right .box-form form .form-group input:focus,
-section.hero .right .box-form form .form-group select:focus {
+section.hero .right .box .lead-form form .form-group input:focus,
+section.hero .right .box .lead-form form .form-group select:focus {
   box-shadow: inherit;
+  border-color: #80bdff;
 }
-section.hero .right .box-form form .form-group input::placeholder,
-section.hero .right .box-form form .form-group select::placeholder {
+section.hero .right .box .lead-form form .form-group input::placeholder,
+section.hero .right .box .lead-form form .form-group select::placeholder {
   color: #9e9e9e;
 }
-section.hero .right .box-form form .form-group input:disabled,
-section.hero .right .box-form form .form-group select:disabled {
+section.hero .right .box .lead-form form .form-group input:disabled,
+section.hero .right .box .lead-form form .form-group select:disabled {
   color: #9e9e9e;
 }
-section.hero .right .box-form form .form-group.child {
+section.hero .right .box .lead-form form .form-group.child {
   padding-top: 20px;
 }
-section.hero .right .box-form form .btn-download-ebook {
+section.hero .right .box .lead-form form .btn-download-ebook {
   border-radius: 26px;
   background-color: #00cc02;
   display: flex;
@@ -361,9 +372,11 @@ section.hero .right .box-form form .btn-download-ebook {
   height: 52px;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 26px;
+  cursor: pointer;
+  outline: none;
 }
-section.hero .right .box-form form .btn-download-ebook span {
+section.hero .right .box .lead-form form .btn-download-ebook span {
   color: #ffffff;
   font-family: "Chewy Regular";
   font-size: 18px;
@@ -372,18 +385,86 @@ section.hero .right .box-form form .btn-download-ebook span {
   line-height: 18px;
   text-transform: uppercase;
 }
-section.hero .right .box-form .terms {
+section.hero .right .box .lead-form span.error-msg {
+  float: left;
+  color: #F3637A;
+  font-weight: 400;
+  text-align: left;
+  font-size: 12px;
+  padding: 0;
+  line-height: 0;
+  position: relative;
+  top: 10px;
+  font-family: "Avenir Book";
+  width: max-content;
+  left: 2px;
+}
+section.hero .right .box .lead-form .terms {
   max-width: 260px;
   margin: 0 auto;
   padding-top: 10px;
 }
-section.hero .right .box-form .terms h5 {
+section.hero .right .box .lead-form .terms h5 {
   color: #bdbdbd;
   font-family: "Avenir Book";
   font-size: 10px;
   font-weight: 500;
   line-height: 16px;
   text-align: center;
+}
+section.hero .right .box .lead-answer {
+  display: none;
+  flex-direction: column;
+}
+section.hero .right .box .lead-answer.active {
+  display: flex !important;
+  justify-content: center;
+}
+section.hero .right .box .lead-answer .img-check {
+  text-align: center;
+}
+section.hero .right .box .lead-answer .img-check img {
+  width: 100%;
+  max-width: 220px;
+}
+section.hero .right .box .lead-answer .title {
+  color: #00cc02;
+  font-size: 22px;
+  font-family: "Avenir Black";
+  text-align: center;
+  padding: 10px;
+}
+section.hero .right .box .lead-answer .msg {
+  color: #000000;
+  font-family: "Avenir Black";
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 28px;
+  text-align: center;
+  padding: 0 10px;
+}
+@media screen and (max-width: 380px) {
+  section.hero .right .box .lead-answer .msg {
+    font-size: 20px;
+  }
+}
+section.hero .right .box .lead-answer .msg2 {
+  color: rgba(40, 45, 57, 0.6);
+  font-family: "Avenir Roman";
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 28px;
+  padding-top: 15px;
+  text-align: center;
+}
+@media screen and (max-width: 380px) {
+  section.hero .right .box .lead-answer .msg2 {
+    font-size: 16px;
+  }
+}
+section.hero .right .box .lead-answer .msg2 span {
+  color: #00cc02;
+  font-weight: 500;
 }
 section.health-cards {
   position: relative;
@@ -485,6 +566,11 @@ section.preview-content {
 @media screen and (max-width: 991px) {
   section.preview-content {
     margin: -30px 0 80px;
+  }
+}
+@media screen and (max-width: 767px) {
+  section.preview-content {
+    margin: -50px 0 60px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -640,6 +726,16 @@ section.help-parents {
   background-color: #faee58;
   padding: 80px 0;
 }
+@media screen and (max-width: 767px) {
+  section.help-parents {
+    padding: 80px 0 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  section.help-parents {
+    padding: 60px 0 0;
+  }
+}
 @media screen and (max-width: 991px) {
   section.help-parents .left {
     position: relative;
@@ -661,6 +757,17 @@ section.help-parents .left .title {
     line-height: 36px;
   }
 }
+@media screen and (max-width: 767px) {
+  section.help-parents .left .title {
+    font-size: 27px;
+    line-height: 32px;
+  }
+}
+@media screen and (max-width: 480px) {
+  section.help-parents .left .title {
+    text-align: center;
+  }
+}
 section.help-parents .left .text {
   padding-top: 20px;
   color: rgba(40, 45, 57, 0.6);
@@ -675,8 +782,24 @@ section.help-parents .left .text {
     line-height: 27px;
   }
 }
+@media screen and (max-width: 767px) {
+  section.help-parents .left .text {
+    font-size: 17px;
+    line-height: 24px;
+  }
+}
+@media screen and (max-width: 480px) {
+  section.help-parents .left .text {
+    text-align: center;
+  }
+}
 section.help-parents .left .cta {
   max-width: 304px;
+}
+@media screen and (max-width: 480px) {
+  section.help-parents .left .cta {
+    margin: 40px auto 0;
+  }
 }
 section.help-parents .right {
   position: relative;
@@ -692,10 +815,24 @@ section.help-parents .right .image-children img {
   max-width: 735px;
   min-width: 650px;
 }
+@media screen and (max-width: 767px) {
+  section.help-parents .right .image-children img {
+    min-width: inherit;
+  }
+}
 @media screen and (max-width: 991px) {
   section.help-parents .right .image-children {
     left: -48%;
     z-index: 1;
+  }
+}
+@media screen and (max-width: 767px) {
+  section.help-parents .right .image-children {
+    padding-top: 30px;
+    position: relative;
+    width: inherit;
+    bottom: inherit;
+    left: inherit !important;
   }
 }
 footer {
@@ -708,9 +845,26 @@ footer .container {
   padding: 50px 0;
   justify-content: space-between;
 }
+@media screen and (max-width: 767px) {
+  footer .container {
+    flex-direction: column;
+    padding: 50px 15px;
+  }
+}
+@media screen and (max-width: 480px) {
+  footer .container {
+    padding: 30px 15px;
+  }
+}
 footer .container .left {
   display: flex;
   align-items: flex-end;
+}
+@media screen and (max-width: 767px) {
+  footer .container .left {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 footer .container .left .image-logo {
   max-width: 255px;
@@ -726,13 +880,35 @@ footer .container .left .menu-footer {
   letter-spacing: 0.3px;
   padding-left: 20px;
 }
+@media screen and (max-width: 991px) {
+  footer .container .left .menu-footer {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 767px) {
+  footer .container .left .menu-footer {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+  }
+}
 footer .container .left .menu-footer a {
   padding: 0 10px;
+}
+@media screen and (max-width: 991px) {
+  footer .container .left .menu-footer a:nth-of-type(2) {
+    white-space: nowrap;
+  }
 }
 footer .container .right #social-media {
   position: relative;
   display: flex;
   margin-bottom: 0;
+}
+@media screen and (max-width: 767px) {
+  footer .container .right #social-media {
+    padding: 0;
+  }
 }
 footer .container .right #social-media li {
   margin: 0 2px;
@@ -758,13 +934,43 @@ footer .container .right #social-media li#instagram {
   background-size: cover;
 }
 footer .container .right #social-media li#facebook {
-  background: url('/assets/images/social.png') -184px 0;
+  background: url('/assets/images/social.png') -183px 0;
   background-size: cover;
 }
 footer .container .right #social-media li,
 footer .container .right #social-media a {
   height: 40px;
   display: block;
+}
+footer .additional_info {
+  height: 30px;
+  background-color: rgba(40, 45, 57, 0.1);
+  font-family: "Avenir Book";
+  font-size: 13px;
+  font-weight: 600;
+  width: 100%;
+}
+@media screen and (max-width: 1320px) {
+  footer .additional_info {
+    padding: 10px;
+    display: inline-table;
+  }
+}
+footer .additional_info p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.6);
+}
+footer .additional_info .rights {
+  display: block;
+  text-align: center;
+}
+@media screen and (min-width: 1319px) {
+  footer .additional_info .rights {
+    clear: both;
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+  }
 }
 html {
   overflow-x: hidden;

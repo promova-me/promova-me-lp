@@ -185,7 +185,8 @@ section.hero {
     }
 
     .right {
-        .box-form {
+
+        .box {
             box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.15);
             border-radius: 24px;
             border: 0 solid #454545;
@@ -193,86 +194,167 @@ section.hero {
             width: 100%;
             max-width: 350px;
             padding: 25px 20px 10px;
+            min-height: 453px;
 
             @media @breakTabletMin {
                 margin: 40px auto 10px;
             }
 
-            .title-form {
-                color: @black;
-                font-family: "Avenir Black";
-                font-size: 20px;
-                font-weight: 900;
-                line-height: 28px;
-                text-align: center;
-                @media @breakTabletMax{
-                    font-size: 18px;
+            .lead-form {
+                .title-form {
+                    color: @black;
+                    font-family: "Avenir Black";
+                    font-size: 20px;
+                    font-weight: 900;
+                    line-height: 28px;
+                    text-align: center;
+                    @media @breakTabletMax{
+                        font-size: 18px;
+                    }
+                }
+
+                form {
+                    .form-group {
+                        margin: 0;
+                        display: flex;
+                        input, select {
+                            height: 48px;
+                            border: 1px solid #e5e5e4;
+                            background-color: @white;
+                            border-radius: 0px;
+                            font-family: "Avenir Book";
+                            font-size: 15px;
+                            font-weight: 500;
+                            padding: 6px 16px 0;
+
+                            &:focus {
+                                box-shadow: inherit;
+                                border-color: #80bdff;
+                            }
+                            &::placeholder {
+                                color: @text-gray-1;
+                            }
+                            &:disabled {
+                                color: @text-gray-1;
+                            }
+                        }
+                        &.child {
+                            padding-top: 20px;
+                        }
+                    }
+                    .btn-download-ebook {
+                        border-radius: 26px;
+                        background-color: @green;
+                        display: flex;
+                        width: 100%;
+                        height: 52px;
+
+                        justify-content: center;
+                        align-items: center;
+                        margin-top: 26px;
+                        cursor: pointer;
+                        outline: none;
+
+                        span {
+                            color: @white;
+                            font-family: "Chewy Regular";
+                            font-size: 18px;
+                            font-weight: 400;
+                            letter-spacing: 2px;
+                            line-height: 18px;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+
+                span.error-msg {
+                    float: left;
+                    color: #F3637A;
+                    font-weight: 400;
+                    text-align: left;
+                    font-size: 12px;
+                    padding: 0;
+                    line-height: 0;
+                    position: relative;
+                    top: 10px;
+                    font-family: "Avenir Book";
+                    width: max-content;
+                    left: 2px;
+                }
+
+                .terms {
+                    max-width: 260px;
+                    margin: 0 auto;
+                    padding-top: 10px;
+                    h5 {
+                        color: @text-gray-2;
+                        font-family: "Avenir Book";
+                        font-size: 10px;
+                        font-weight: 500;
+                        line-height: 16px;
+                        text-align: center;
+                    }
                 }
             }
 
-            form {
-                .form-group {
-                    margin: 0;
-                    display: flex;
-                    input, select {
-                        height: 48px;
-                        border: 1px solid #e5e5e4;
-                        background-color: @white;
-                        border-radius: 0px;
-                        font-family: "Avenir Book";
-                        font-size: 15px;
-                        font-weight: 500;
+            .lead-answer {
+                display: none;
+                flex-direction: column;
 
-                        &:focus {
-                            box-shadow: inherit;
-                        }
-                        &::placeholder {
-                            color: @text-gray-1;
-                        }
-                        &:disabled {
-                            color: @text-gray-1;
-                        }
-                    }
-                    &.child {
-                        padding-top: 20px;
+                &.active {
+                    display: flex !important;
+                    justify-content: center;
+                }
+
+                .img-check {
+                    text-align: center;
+                    img {
+                        width: 100%;
+                        max-width: 220px;
                     }
                 }
-                .btn-download-ebook {
-                    border-radius: 26px;
-                    background-color: @green;
-                    display: flex;
-                    width: 100%;
-                    height: 52px;
 
-                    justify-content: center;
-                    align-items: center;
-                    margin-top: 20px;
+                .title {
+                    color: @green;
+                    font-size: 22px;
+                    font-family: "Avenir Black";
+                    text-align: center;
+                    padding: 10px;
+                }
+
+                .msg {
+                    color: @black;
+                    font-family: "Avenir Black";
+                    font-size: 20px;
+                    font-weight: 900;
+                    line-height: 28px;
+                    text-align: center;
+                    padding: 0 10px;
+
+                    @media screen and (max-width: 380px){
+                        font-size: 20px;
+                    }
+                }
+
+                .msg2 {
+                    color: rgba(40, 45, 57, 0.6);
+                    font-family: "Avenir Roman";
+                    font-size: 18px;
+                    font-weight: 300;
+                    line-height: 28px;
+                    padding-top: 15px;
+                    text-align: center;
+
+                    @media screen and (max-width: 380px){
+                        font-size: 16px;
+                    }
 
                     span {
-                        color: @white;
-                        font-family: "Chewy Regular";
-                        font-size: 18px;
-                        font-weight: 400;
-                        letter-spacing: 2px;
-                        line-height: 18px;
-                        text-transform: uppercase;
+                        color: @green;
+                        font-weight: 500;
                     }
-                }
-            }
-            .terms {
-                max-width: 260px;
-                margin: 0 auto;
-                padding-top: 10px;
-                h5 {
-                    color: @text-gray-2;
-                    font-family: "Avenir Book";
-                    font-size: 10px;
-                    font-weight: 500;
-                    line-height: 16px;
-                    text-align: center;
                 }
             }
         }
     }
-
 }
