@@ -6,6 +6,7 @@ footer {
         align-items: center;
         padding: 50px 0;
         justify-content: space-between;
+        position: relative;
 
         @media @breakTabletMin {
             flex-direction: column;
@@ -14,6 +15,45 @@ footer {
 
         @media @breakMobileMax {
             padding: 30px 15px;
+        }
+
+        .back-to-top {
+            width: 70px;
+            height: 70px;
+            box-shadow: 3px 3px 20px rgba(0, 204, 2, 0.15);
+            border-radius: 35px;
+            border: 1px solid @green;
+            background-color: @white;
+            position: absolute;
+            right: 80px;
+            text-align: center;
+            z-index: 10;
+            top: -35px;
+            line-height: 14px;
+
+            span {
+                color: @green;
+                font-family: "Avenir Black";
+                font-size: 10px;
+                font-weight: 900;
+                line-height: 0;
+                text-transform: uppercase;
+                position: relative;
+                width: 100%;
+                height: 100%;
+                top: 22px;
+            }
+
+            @media @breakTabletMin {
+                width: 60px;
+                height: 60px;
+                line-height: 12px;
+                right: 40px;
+                span {
+                    top: 17px;
+                    font-size: 8px;
+                }
+            }
         }
 
         .left {

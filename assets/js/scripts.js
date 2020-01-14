@@ -14,8 +14,15 @@ $(function() {
     $('.btn-download-ebook').click( function () {
         if (Validation.validateLeadForm()){
             Lead.setLeadData();
+            Lead.setLeadEmailOnFeedbackScreen(Lead.email);
             Effects.switchScreenOnBox('form', 'answer');
         }
+    });
+
+    // Remove error validation on focus field
+    $('input, select').on('focus', function () {
+        $('#form-ebook-download .error-msg').text('');
+        Util.removeRedBorderOnErrorInput(this);
     });
 
     // Init masks on form
@@ -60,6 +67,8 @@ const Slider = {
             autoWidth: false,
             currentPagerPosition: 'middle',
             auto: true,
+            pause: 3000,
+            speed: 1000,
         });
     },
 };
@@ -115,6 +124,10 @@ const Lead = {
             return false
         }
         return true;
+    },
+
+    setLeadEmailOnFeedbackScreen: function (email) {
+        $('.lead-answer .msg2 span').text(email)
     }
 
 };
@@ -129,6 +142,7 @@ const Validation = {
         if (!$("#name-form").val()) {
 
             Util.addError(this.errorLeadElement, 'Informe seu nome completo');
+            Util.addRedBorderOnErrorInput('#name-form');
             return false;
 
         } else {
@@ -139,6 +153,7 @@ const Validation = {
             if (str.match(regex)) {
 
                 Util.addError(this.errorLeadElement, 'Há caracteres inválidos no seu nome');
+                Util.addRedBorderOnErrorInput('#name-form');
                 return false;
 
             } else {
@@ -154,6 +169,7 @@ const Validation = {
             if (!this.name.replace(/ /g,'') || !this.surname.replace(/ /g,'')) {
 
                 Util.addError(this.errorLeadElement, 'Informe o seu nome e sobrenome');
+                Util.addRedBorderOnErrorInput('#name-form');
                 return false;
             }
 
@@ -163,21 +179,27 @@ const Validation = {
         if (!$("#email-form").val()) {
 
             Util.addError(this.errorLeadElement, 'Informe seu e-mail');
+            Util.addRedBorderOnErrorInput('#email-form');
             return false;
 
         } if (!$("#confirm-email-form").val()) {
 
             Util.addError(this.errorLeadElement, 'Confirme seu e-mail');
+            Util.addRedBorderOnErrorInput('#confirm-email-form');
             return false;
 
         } else if (!Validation.validateEmail($("#email-form").val()) || !Validation.validateEmail($("#confirm-email-form").val())) {
 
             Util.addError(this.errorLeadElement, "E-mail em formato incorreto");
+            Util.addRedBorderOnErrorInput('#email-form');
+            Util.addRedBorderOnErrorInput('#confirm-email-form');
             return false;
 
         } else if (!($("#email-form").val() == $("#confirm-email-form").val())) {
 
             Util.addError(this.errorLeadElement, "Os E-mails não correspondem");
+            Util.addRedBorderOnErrorInput('#email-form');
+            Util.addRedBorderOnErrorInput('#confirm-email-form');
             return false;
 
         } else {
@@ -193,6 +215,7 @@ const Validation = {
         if (!$("#phone-form").val()) {
 
             Util.addError(this.errorLeadElement, "Informe seu telefone");
+            Util.addRedBorderOnErrorInput('#phone-form');
             return false;
 
         } else {
@@ -201,6 +224,7 @@ const Validation = {
             if (lengthPhone <= 10) {
 
                 Util.addError(this.errorLeadElement, "Seu Telefone está incompleto");
+                Util.addRedBorderOnErrorInput('#phone-form');
                 return false;
 
             }
@@ -212,6 +236,7 @@ const Validation = {
         if (!selectedCountry) {
 
             Util.addError(this.errorLeadElement, 'Informe o estado');
+            Util.addRedBorderOnErrorInput('#state-form');
             return false;
 
         }
@@ -220,16 +245,18 @@ const Validation = {
         if (!$("#child-name-form").val()) {
 
             Util.addError(this.errorLeadElement, 'Informe o nome do pequeno');
+            Util.addRedBorderOnErrorInput('#child-name-form');
             return false;
 
         } else {
 
-            var str = $("#name-form").val();
+            var str = $("#child-name-form").val();
             var regex = '[@!#$%¨&*+_´`\'^~;:?|\?,./{}"<>()0-9]';
 
             if (str.match(regex)) {
 
                 Util.addError(this.errorLeadElement, 'Há caracteres inválidos no nome do pequeno');
+                Util.addRedBorderOnErrorInput('#child-name-form');
                 return false;
 
             }
@@ -238,6 +265,7 @@ const Validation = {
         if (!$("#child-age-form").val()) {
 
             Util.addError(this.errorLeadElement, 'Informe a idade do pequeno');
+            Util.addRedBorderOnErrorInput('#child-age-form');
             return false;
 
         }
@@ -263,8 +291,17 @@ const Util = {
         $(element).text('');
     },
 
+    addRedBorderOnErrorInput: function(element){
+        $(element).addClass('error');
+    },
+
+    removeRedBorderOnErrorInput: function(element){
+        $(element).removeClass('error');
+    },
+
     initMasks: function () {
         $('#phone-form').mask('(99) 99999-9999');
+        $('#child-age-form').mask('99');
     }
 
 };

@@ -211,6 +211,10 @@ section.hero {
                     @media @breakTabletMax{
                         font-size: 18px;
                     }
+                    @media screen and (max-width: 370px){
+                        font-size: 16px;
+                        padding-bottom: 5px;
+                    }
                 }
 
                 form {
@@ -236,6 +240,9 @@ section.hero {
                             }
                             &:disabled {
                                 color: @text-gray-1;
+                            }
+                            &.error {
+                                border-color: #F3637A;
                             }
                         }
                         &.child {
@@ -304,6 +311,10 @@ section.hero {
                 &.active {
                     display: flex !important;
                     justify-content: center;
+                    padding: 14px 0 0;
+                    @media screen and (max-width: 335px) {
+                        padding: 0;
+                    }
                 }
 
                 .img-check {

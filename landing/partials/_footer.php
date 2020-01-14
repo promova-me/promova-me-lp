@@ -1,8 +1,11 @@
 <footer>
     <div class="container">
+        <a href="#hero" rel="rel" class="back-to-top">
+            <span>Voltar ao topo</span>
+        </a>
         <div class="left">
             <div class="image-logo">
-                <img src="assets/images/logo-tecnonutri.jpeg" alt="" class="logo">
+                <img src="assets/images/logo-tecnonutri.png" alt="" class="logo">
             </div>
             <div class="menu-footer">
                 <a href="#health-cards" rel="rel" class="link">Conheça</a>

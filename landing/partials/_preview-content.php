@@ -45,14 +45,14 @@
                     </li>
                 </ul>
 
-                <a href="#" class="cta desktop cta-green">
+                <a href="#form-anchor" class="cta desktop cta-green" rel="rel">
                     <span>Baixar o E-book Grátis</span>
                 </a>
 
             </div>
 
             <div class="col-sm-12 bottom">
-                <a href="#" class="cta mobile cta-green">
+                <a href="#form-anchor" class="cta mobile cta-green" rel="rel">
                     <span>Baixar o E-book Grátis</span>
                 </a>
             </div>

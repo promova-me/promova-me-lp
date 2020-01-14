@@ -7,7 +7,7 @@
                 <h4 class="text">
                     Queremos que nossas crianças cresçam mais saudáveis e mais felizes. Por isso pensamos em ajudar os papais e mamães nesta tarefa, que não é tão fácil assim.
                 </h4>
-                <a href="#" class="cta cta-white">
+                <a href="#form-anchor" class="cta cta-white" rel="rel">
                     <span>Baixar o E-book Grátis</span>
                 </a>
             </div>

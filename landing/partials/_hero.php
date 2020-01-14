@@ -21,10 +21,12 @@ $states = array('AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MS','MT','MG'
                 <h3 class="desc-top">Baixe o E-book grátis</h3>
                 <h1 class="title">Seu filho mais <span>saudável</span></h1>
                 <h3 class="desc-bottom">Dicas de alimentação, ideias de lancheira e brincadeiras para seu filho viver bem e melhor!</h3>
-                <a href="#" class="cta cta-white"><span>Veja o conteúdo</span></a>
+                <a href="#preview-content" class="cta cta-white" rel="rel"><span>Veja o conteúdo</span></a>
             </div>
 
             <div class="right col-lg-4 col-md-6">
+
+                <div id="form-anchor"></div>
 
                 <div class="box">
 
@@ -54,7 +56,7 @@ $states = array('AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MS','MT','MG'
                             </div>
                             <div class="form-group child">
                                 <input type="text" class="form-control" id="child-name-form" tabindex="6" placeholder="Nome do pequeno">
-                                <input type="number" class="form-control" max="3" id="child-age-form" tabindex="7" placeholder="Idade">
+                                <input type="tel" class="form-control" maxlength="2" id="child-age-form" tabindex="7" placeholder="Idade">
                             </div>
 
                             <span class="error-msg"></span>

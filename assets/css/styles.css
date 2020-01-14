@@ -84,6 +84,13 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+.lSSlideOuter .lSPager.lSpg > li a {
+  background-color: #00cc02;
+}
+.lSSlideOuter .lSPager.lSpg > li.active a,
+.lSSlideOuter .lSPager.lSpg > li:hover a {
+  background-color: #faee58;
+}
 header {
   /*background-color: #00cc02;
     min-height: 80px;
@@ -333,6 +340,12 @@ section.hero .right .box .lead-form .title-form {
     font-size: 18px;
   }
 }
+@media screen and (max-width: 370px) {
+  section.hero .right .box .lead-form .title-form {
+    font-size: 16px;
+    padding-bottom: 5px;
+  }
+}
 section.hero .right .box .lead-form form .form-group {
   margin: 0;
   display: flex;
@@ -360,6 +373,10 @@ section.hero .right .box .lead-form form .form-group select::placeholder {
 section.hero .right .box .lead-form form .form-group input:disabled,
 section.hero .right .box .lead-form form .form-group select:disabled {
   color: #9e9e9e;
+}
+section.hero .right .box .lead-form form .form-group input.error,
+section.hero .right .box .lead-form form .form-group select.error {
+  border-color: #F3637A;
 }
 section.hero .right .box .lead-form form .form-group.child {
   padding-top: 20px;
@@ -419,6 +436,12 @@ section.hero .right .box .lead-answer {
 section.hero .right .box .lead-answer.active {
   display: flex !important;
   justify-content: center;
+  padding: 14px 0 0;
+}
+@media screen and (max-width: 335px) {
+  section.hero .right .box .lead-answer.active {
+    padding: 0;
+  }
 }
 section.hero .right .box .lead-answer .img-check {
   text-align: center;
@@ -494,6 +517,9 @@ section.health-cards .cards.mobile .lSSlideWrapper {
   section.health-cards .cards.mobile .lSSlideWrapper {
     max-width: 350px;
     margin: 0 auto;
+    box-shadow: none;
+    border: none;
+    border-radius: inherit;
   }
 }
 @media screen and (max-width: 767px) {
@@ -526,6 +552,8 @@ section.health-cards .card {
   section.health-cards .card {
     height: inherit;
     padding: 46px 16px;
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.125);
   }
 }
 section.health-cards .card .title-card {
@@ -844,6 +872,7 @@ footer .container {
   align-items: center;
   padding: 50px 0;
   justify-content: space-between;
+  position: relative;
 }
 @media screen and (max-width: 767px) {
   footer .container {
@@ -854,6 +883,44 @@ footer .container {
 @media screen and (max-width: 480px) {
   footer .container {
     padding: 30px 15px;
+  }
+}
+footer .container .back-to-top {
+  width: 70px;
+  height: 70px;
+  box-shadow: 3px 3px 20px rgba(0, 204, 2, 0.15);
+  border-radius: 35px;
+  border: 1px solid #00cc02;
+  background-color: #ffffff;
+  position: absolute;
+  right: 80px;
+  text-align: center;
+  z-index: 10;
+  top: -35px;
+  line-height: 14px;
+}
+footer .container .back-to-top span {
+  color: #00cc02;
+  font-family: "Avenir Black";
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 0;
+  text-transform: uppercase;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: 22px;
+}
+@media screen and (max-width: 767px) {
+  footer .container .back-to-top {
+    width: 60px;
+    height: 60px;
+    line-height: 12px;
+    right: 40px;
+  }
+  footer .container .back-to-top span {
+    top: 17px;
+    font-size: 8px;
   }
 }
 footer .container .left {
