@@ -41,8 +41,6 @@
 
 <?php
 
-require('partials/_header.php');
-
 require('landing.php');
 
 require('partials/_footer.php');

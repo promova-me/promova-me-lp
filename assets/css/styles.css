@@ -91,26 +91,6 @@ input[type=number] {
 .lSSlideOuter .lSPager.lSpg > li:hover a {
   background-color: #faee58;
 }
-header {
-  /*background-color: #00cc02;
-    min-height: 80px;
-
-    ul {
-        li.nav-item {
-            padding: 15px 0 0;
-            a {
-                color: #ffffff;
-                font-family: "Avenir Black";
-                font-size: 18px;
-                font-weight: 900;
-                line-height: 12px;
-                &.active {
-                    border-bottom: 5px solid #fff;
-                }
-            }
-        }
-    }*/
-}
 section.hero {
   background-color: #00cc02;
   background-image: url("/assets/images/bg-green.png");
@@ -360,6 +340,7 @@ section.hero .right .box .lead-form form .form-group select {
   font-size: 15px;
   font-weight: 500;
   padding: 6px 16px 0;
+  margin: 2px 0;
 }
 section.hero .right .box .lead-form form .form-group input:focus,
 section.hero .right .box .lead-form form .form-group select:focus {
@@ -370,16 +351,15 @@ section.hero .right .box .lead-form form .form-group input::placeholder,
 section.hero .right .box .lead-form form .form-group select::placeholder {
   color: #9e9e9e;
 }
-section.hero .right .box .lead-form form .form-group input:disabled,
-section.hero .right .box .lead-form form .form-group select:disabled {
-  color: #9e9e9e;
-}
 section.hero .right .box .lead-form form .form-group input.error,
 section.hero .right .box .lead-form form .form-group select.error {
-  border-color: #F3637A;
+  border-color: #f3637a;
+}
+section.hero .right .box .lead-form form .form-group.half :first-child {
+  margin: 2px 4px 2px 0;
 }
 section.hero .right .box .lead-form form .form-group.child {
-  padding-top: 20px;
+  padding-top: 16px;
 }
 section.hero .right .box .lead-form form .btn-download-ebook {
   border-radius: 26px;
@@ -404,7 +384,7 @@ section.hero .right .box .lead-form form .btn-download-ebook span {
 }
 section.hero .right .box .lead-form span.error-msg {
   float: left;
-  color: #F3637A;
+  color: #f3637a;
   font-weight: 400;
   text-align: left;
   font-size: 12px;

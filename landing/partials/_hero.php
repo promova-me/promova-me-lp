@@ -43,7 +43,7 @@ $states = array('AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MS','MT','MG'
                             <div class="form-group">
                                 <input type="email" class="form-control" id="confirm-email-form" tabindex="3" placeholder="Confirme seu e-mail">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group half">
                                 <input type="tel" class="form-control" id="phone-form" tabindex="4" placeholder="Celular">
                                 <select class="form-control" id="state-form" tabindex="5">
                                     <option selected disabled value="">Estado</option>
@@ -54,9 +54,17 @@ $states = array('AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MS','MT','MG'
                                     } ?>
                                 </select>
                             </div>
-                            <div class="form-group child">
+                            <div class="form-group child half">
                                 <input type="text" class="form-control" id="child-name-form" tabindex="6" placeholder="Nome do pequeno">
-                                <input type="tel" class="form-control" maxlength="2" id="child-age-form" tabindex="7" placeholder="Idade">
+                                <select class="form-control" id="child-age-form" tabindex="7">
+                                    <option selected disabled value="">Idade</option>
+                                    <?php
+                                    for ($i = 0; $i <= 12; $i++) { ?>
+                                        <option value="<?= $i ?>"><?= $i ?></option>
+                                        <?php
+                                    } ?>
+                                </select>
+<!--                                <input type="tel" class="form-control" maxlength="2" id="child-age-form" tabindex="7" placeholder="Idade">-->
                             </div>
 
                             <span class="error-msg"></span>

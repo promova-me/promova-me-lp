@@ -15,9 +15,6 @@
                         <li data-thumb="/assets/images/gallery3.png">
                             <img src="/assets/images/gallery3.png" />
                         </li>
-                        <!--<li data-thumb="http://sachinchoolur.github.io/lightslider/img/thumb/cS-4.jpg">
-                            <img src="http://sachinchoolur.github.io/lightslider/img/cS-4.jpg" />
-                        </li>-->
                     </ul>
                 </div>
             </div>

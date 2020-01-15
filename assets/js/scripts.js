@@ -119,7 +119,7 @@ const Lead = {
             this.phone = $('#phone-form').val();
             this.state = $('#state-form').children("option:selected").val();
             this.childName = $('#child-name-form').val();
-            this.childAge = $('#child-age-form').val();
+            this.childAge = $('#child-age-form').children("option:selected").val();
         } catch (e) {
             return false
         }
@@ -262,7 +262,8 @@ const Validation = {
             }
         }
 
-        if (!$("#child-age-form").val()) {
+        var selectedChildAge = $('#child-age-form').children("option:selected").val();
+        if (!selectedChildAge) {
 
             Util.addError(this.errorLeadElement, 'Informe a idade do pequeno');
             Util.addRedBorderOnErrorInput('#child-age-form');
@@ -301,7 +302,6 @@ const Util = {
 
     initMasks: function () {
         $('#phone-form').mask('(99) 99999-9999');
-        $('#child-age-form').mask('99');
     }
 
 };

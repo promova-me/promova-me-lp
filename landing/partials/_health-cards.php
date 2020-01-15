@@ -17,7 +17,7 @@
                 <div class="col-md-4">
                     <div class="card">
                         <h3 class="title-card">
-                            A Alimentação dos Paquenos na Prática
+                            A Alimentação dos Pequenos na Prática
                         </h3>
                         <h4 class="text-card">
                             Monte refeições para o dia-dia, metas e desafios e muito mais
@@ -53,7 +53,7 @@
                         <li>
                             <div class="card">
                                 <h3 class="title-card">
-                                    A Alimentação dos Paquenos na Prática
+                                    A Alimentação dos Pequenos na Prática
                                 </h3>
                                 <h4 class="text-card">
                                     Monte refeições para o dia-dia, metas e desafios e muito mais
