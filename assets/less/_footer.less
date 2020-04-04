@@ -1,16 +1,15 @@
 footer {
-    background-color: @green;
-    min-height: 140px;
+    background-color: @blue-predominant;
+    min-height: 100px;
     .container {
         display: flex;
-        align-items: center;
-        padding: 50px 0;
-        justify-content: space-between;
+        padding: 50px 0 30px;
         position: relative;
 
         @media @breakTabletMin {
             flex-direction: column;
             padding: 50px 15px;
+            text-align: center;
         }
 
         @media @breakMobileMax {
@@ -22,7 +21,7 @@ footer {
             height: 70px;
             box-shadow: 3px 3px 20px rgba(0, 204, 2, 0.15);
             border-radius: 35px;
-            border: 1px solid @green;
+            border: 1px solid @blue-predominant;
             background-color: @white;
             position: absolute;
             right: 80px;
@@ -32,7 +31,7 @@ footer {
             line-height: 14px;
 
             span {
-                color: @green;
+                color: @blue-predominant;
                 font-family: "Avenir Black";
                 font-size: 10px;
                 font-weight: 900;
@@ -56,9 +55,33 @@ footer {
             }
         }
 
+        h4.title {
+            font-size: 24px;
+            color: @white;
+            font-weight: 900;
+            padding: 0;
+            font-family: "Avenir Black";
+        }
+
+        ul {
+            padding: 0;
+            list-style: none;
+            margin: 0;
+            li {
+                color: @white;
+                font-size: 16px;
+                font-family: "Avenir Book";
+            }
+        }
+
+        .left, .middle, .right {
+            @media @breakTabletMin {
+                padding: 15px 0;
+            }
+        }
+
         .left {
             display: flex;
-            align-items: flex-end;
 
             @media @breakTabletMin {
                 flex-direction: column;
@@ -66,79 +89,13 @@ footer {
             }
 
             .image-logo {
-                max-width: 255px;
+                max-width: 200px;
                 img {
                     width: 100%;
-                }
-            }
-            .menu-footer {
-                color: #ffffff;
-                font-family: "Avenir Black";
-                font-size: 16px;
-                font-weight: 900;
-                letter-spacing: 0.3px;
-                padding-left: 20px;
-
-                @media @breakTabletMax {
-                    text-align: center;
-                }
-
-                @media @breakTabletMin {
-                    padding: 20px 0;
-                    display: flex;
-                    flex-direction: column;
-                }
-
-                a {
+                    background-color: @white;
                     padding: 0 10px;
-                    @media @breakTabletMax {
-                        &:nth-of-type(2){
-                            white-space: nowrap;
-                        }
-                    }
-                }
-            }
-        }
-        .right {
-            #social-media {
-                position: relative;
-                display: flex;
-                margin-bottom: 0;
-
-                @media @breakTabletMin {
-                    padding: 0;
-                }
-
-                li {
-                    margin: 0 2px;
-                    padding: 0;
-                    list-style: none;
-                    top: 0;
-                    width: 41px;
-                    &#youtube {
-                        background: url('/assets/images/social.png') 0 0;
-                        background-size: cover;
-                    }
-                    &#twitter {
-                        background: url('/assets/images/social.png') -46px 0;
-                        background-size: cover;
-                    }
-                    &#linkedin {
-                        background: url('/assets/images/social.png') -92px 0;
-                        background-size: cover;
-                    }
-                    &#instagram {
-                        background: url('/assets/images/social.png') -138px 0;
-                        background-size: cover;
-                    }
-                    &#facebook {
-                        background: url('/assets/images/social.png') -183px 0;
-                        background-size: cover;
-                    }
-                }
-                li, a {
-                    height: 40px;
-                    display: block;
+                    border-radius: 5px;
+                    border: 2px solid @blue-predominant;
                 }
             }
         }

@@ -1,10 +1,10 @@
-section.health-cards {
+section.steps-cards {
 
     position: relative;
     top: -126px;
 
     @media @breakTabletMin {
-        top: -105px;
+        top: -130px;
     }
 
     .cards {
@@ -31,10 +31,6 @@ section.health-cards {
             @media @breakTabletMin {
                 display: contents;
             }
-
-            /*@media screen and (max-width: 380px){
-                margin: 0 20px;
-            }*/
         }
         &.desktop {
             display: flex;
@@ -46,33 +42,42 @@ section.health-cards {
 
     .card {
 
-        height: 240px;
+        height: 260px;
         box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.15);
         border-radius: 24px;
         border: 0 solid #454545;
         background-color: #ffffff;
-        padding-top: 58px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
-        @media @breakTabletMax{
-            padding: 44px 16px 0;
-        }
         @media @breakTabletMin {
             height: inherit;
-            padding: 46px 16px;
+            padding: 40px 15px;
             box-shadow: none;
             border: 1px solid rgba(0,0,0,.125);
+        }
+
+        .image {
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            img {
+                max-height: 120px;
+            }
         }
 
         .title-card {
 
             color: #282d39;
             font-family: "Avenir Black";
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 900;
             letter-spacing: 1px;
             line-height: 30px;
             text-align: center;
-            padding-bottom: 16px;
+            padding-top: 10px;
 
             @media @breakTabletMax{
                 font-size: 20px;

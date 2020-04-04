@@ -8,7 +8,7 @@ $(function() {
 
     // Init Effects
     Effects.initLinkRel();
-    Effects.initSwitchNavBar();
+    // Effects.initSwitchNavBar();
 
     // Btn Form Lead clicked
     $('.btn-download-ebook').click( function () {
@@ -75,7 +75,7 @@ const Slider = {
 
 const Effects = {
     initSwitchNavBar: function () {
-        $('ul.nav-bar li a').on('click', function () {
+        $('ul.menu li a').on('click', function () {
             if (!$(this).parent().hasClass('active')){
                 $('ul.nav-bar').find('li.active').removeClass('active');
                 $(this).parent().addClass('active');

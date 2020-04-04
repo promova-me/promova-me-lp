@@ -1,6 +1,6 @@
 php:
   build: .
   ports:
-    - "80:80"
+    - "81:80"
   volumes:
     - ./:/var/www/html

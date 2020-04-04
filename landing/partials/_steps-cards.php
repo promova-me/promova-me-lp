@@ -1,37 +1,37 @@
 <!-- Section Health Cards -->
-<section class="health-cards" id="health-cards">
+<section class="steps-cards" id="steps-cards">
     <div class="container">
         <div class="row justify-content-md-center">
 
             <div class="cards desktop">
                 <div class="col-md-4">
                     <div class="card">
+                        <div class="image">
+                            <img src="/assets/images/card-1.svg" alt="">
+                        </div>
                         <h3 class="title-card">
-                            Entenda a Psicologia da Alimentação
+                            Preencha as informações do seu negócio
                         </h3>
-                        <h4 class="text-card">
-                            Aprenda a reconhecer os aspectos da alimentação
-                        </h4>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card">
+                        <div class="image">
+                            <img src="/assets/images/card-2-old.svg" alt="">
+                        </div>
                         <h3 class="title-card">
-                            A Alimentação dos Pequenos na Prática
+                            Selecione uma foto ou imagem bem legal
                         </h3>
-                        <h4 class="text-card">
-                            Monte refeições para o dia-dia, metas e desafios e muito mais
-                        </h4>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card">
+                        <div class="image">
+                            <img src="/assets/images/card-3.svg" alt="">
+                        </div>
                         <h3 class="title-card">
-                            Aprenda mais sobre Atividades Físicas
+                            Pronto! Agora é só compartilhar
                         </h3>
-                        <h4 class="text-card">
-                            Conheça os benefícios da atividade física de desenvolvimento infantil
-                        </h4>
                     </div>
                 </div>
             </div>
@@ -42,32 +42,32 @@
                     <ul id="sliderHealthCards">
                         <li>
                             <div class="card">
+                                <div class="image">
+                                    <img src="/assets/images/card-1.svg" alt="">
+                                </div>
                                 <h3 class="title-card">
-                                    Entenda a Psicologia da Alimentação
+                                    Preencha as informações do seu negócio
                                 </h3>
-                                <h4 class="text-card">
-                                    Aprenda a reconhecer os aspectos da alimentação
-                                </h4>
                             </div>
                         </li>
                         <li>
                             <div class="card">
+                                <div class="image">
+                                    <img src="/assets/images/card-2-old.svg" alt="">
+                                </div>
                                 <h3 class="title-card">
-                                    A Alimentação dos Pequenos na Prática
+                                    Selecione uma foto ou imagem bem legal
                                 </h3>
-                                <h4 class="text-card">
-                                    Monte refeições para o dia-dia, metas e desafios e muito mais
-                                </h4>
                             </div>
                         </li>
                         <li>
                             <div class="card">
+                                <div class="image">
+                                    <img src="/assets/images/card-3.svg" alt="">
+                                </div>
                                 <h3 class="title-card">
-                                    Aprenda mais sobre Atividades Físicas
+                                    Pronto! Agora é só compartilhar
                                 </h3>
-                                <h4 class="text-card">
-                                    Conheça os benefícios da atividade física de desenvolvimento infantil
-                                </h4>
                             </div>
                         </li>
                     </ul>

@@ -2,17 +2,9 @@
 <html lang="pt-br">
 <head>
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-KBWPCXB');</script>
-    <!-- End Google Tag Manager -->
-
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
-    <title>Seu filho mais saudável</title>
+    <title>Promova.me | Crie grátis uma imagem promocional para seu negócio</title>
 
     <!--  Bootstrap & JQuery  -->
     <script src="/assets/js/jquery.min.js"></script>
@@ -28,6 +20,7 @@
     <link type="text/css" rel="stylesheet" href="/assets/css/lightslider.min.css" />
 
     <!--  Local Styles & Scripts  -->
+    <script src="/assets/js/card-generator.js"></script>
     <script src="/assets/js/scripts.js"></script>
     <link href="/assets/css/styles.css" rel="stylesheet"/>
 

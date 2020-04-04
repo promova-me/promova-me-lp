@@ -2,12 +2,17 @@
 /* ============================================= */
 
 @green: #00cc02;
+@blue-predominant: #379abb;
+@blue-lighter: #7ac5d8;
+@orange-complement: #d79f2e;
 @yellow: #faee58;
 @white: #ffffff;
 @light-grey: #f1f3f4;
 @black: #000000;
 @text-gray-1: #9e9e9e;
 @text-gray-2: #bdbdbd;
+@text-gray-3: #282d39;
+@text-gray-4: #4e6363;
 @blue-focus: #80bdff;
 @red-error: #F3637A;
 
@@ -69,14 +74,36 @@ textarea {
 }
 
 .cta {
-    border-radius: 30px;
+
     display: flex;
-    width: 100%;
-    max-width: 255px;
-    height: 64px;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    margin: 66px auto 50px;
+    width: 100%;
+    max-width: 255px;
+    height: 56px;
+    box-shadow: 0 4px 0px 0 darken(@orange-complement, 10%);
+    border-radius: 28px;
+    border: none;
+    background-color: @orange-complement;
+    text-shadow: 0 2px 2px rgba(0,0,0,.22);
+    color: @white;
+    font-size: 23px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0;
+
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+
+    &:disabled,[disabled] {
+        background-image: linear-gradient(90deg,#AAAAAA 0,#999999 100%);
+        box-shadow: 0 4px 0px 0 #666666;
+        cursor: progress;
+    }
 
     span {
         font-family: "Avenir Black";
@@ -84,20 +111,6 @@ textarea {
         font-weight: 900;
         letter-spacing: 0.38px;
         padding-top: 6px;
-    }
-
-    &-white {
-        background-color: @white;
-        span {
-            color: @green;
-        }
-    }
-
-    &-green {
-        background-color: @green;
-        span {
-            color: @yellow;
-        }
     }
 }
 
@@ -111,10 +124,10 @@ input[type=number] {
     -moz-appearance:textfield;
 }
 
-// Change dots color of Slider on mobile
+// Change dots color of Slider on mobile 
 .lSSlideOuter .lSPager.lSpg>li a {
-    background-color: @green;
+    background-color: @blue-lighter;
 }
 .lSSlideOuter .lSPager.lSpg>li.active a, .lSSlideOuter .lSPager.lSpg>li:hover a {
-    background-color: @yellow;
+    background-color: @orange-complement;
 }
