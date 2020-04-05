@@ -1,4 +1,4 @@
-<!-- Section Health Cards -->
+<!-- Section Steps Cards -->
 <section class="steps-cards" id="steps-cards">
     <div class="container">
         <div class="row justify-content-md-center">
@@ -39,7 +39,7 @@
 
             <div class="cards mobile">
                 <div class="col-sm-12">
-                    <ul id="sliderHealthCards">
+                    <ul id="sliderStepsCards">
                         <li>
                             <div class="card">
                                 <div class="image">

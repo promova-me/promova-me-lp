@@ -20,17 +20,11 @@
     <link type="text/css" rel="stylesheet" href="/assets/css/lightslider.min.css" />
 
     <!--  Local Styles & Scripts  -->
-    <script src="/assets/js/card-generator.js"></script>
-    <script src="/assets/js/scripts.js"></script>
+    <script type="text/javascript" src="/assets/js/scripts.js"></script>
     <link href="/assets/css/styles.css" rel="stylesheet"/>
 
 </head>
 <body>
-
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBWPCXB"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
 <?php
 

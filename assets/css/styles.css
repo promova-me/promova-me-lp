@@ -471,6 +471,176 @@ section.preview-content #tip {
   -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
+section.preview-content .box {
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 24px;
+  border: 0 solid #454545;
+  background-color: #ffffff;
+  width: 100%;
+  padding: 25px 20px 10px;
+  min-height: 453px;
+}
+@media screen and (max-width: 767px) {
+  section.preview-content .box {
+    margin: 40px auto 10px;
+  }
+}
+section.preview-content .box .card-form .title-form {
+  color: #000000;
+  font-family: "Avenir Black";
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 28px;
+  text-align: center;
+}
+@media screen and (max-width: 991px) {
+  section.preview-content .box .card-form .title-form {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 370px) {
+  section.preview-content .box .card-form .title-form {
+    font-size: 16px;
+    padding-bottom: 5px;
+  }
+}
+section.preview-content .box .card-form form .form-group {
+  margin: 0;
+  display: flex;
+}
+section.preview-content .box .card-form form .form-group input,
+section.preview-content .box .card-form form .form-group select {
+  height: 48px;
+  border: 1px solid #e5e5e4;
+  background-color: #ffffff;
+  border-radius: 0px;
+  font-family: "Avenir Book";
+  font-size: 15px;
+  font-weight: 500;
+  padding: 6px 16px 0;
+  margin: 2px 0;
+}
+section.preview-content .box .card-form form .form-group input:focus,
+section.preview-content .box .card-form form .form-group select:focus {
+  box-shadow: inherit;
+  border-color: #80bdff;
+}
+section.preview-content .box .card-form form .form-group input::placeholder,
+section.preview-content .box .card-form form .form-group select::placeholder {
+  color: #9e9e9e;
+}
+section.preview-content .box .card-form form .form-group input.error,
+section.preview-content .box .card-form form .form-group select.error {
+  border-color: #f3637a;
+}
+section.preview-content .box .card-form form .form-group.half :first-child {
+  margin: 2px 4px 2px 0;
+}
+section.preview-content .box .card-form form .form-group.child {
+  padding-top: 16px;
+}
+section.preview-content .box .card-form form .btn-generate-card {
+  border-radius: 26px;
+  background-color: #00cc02;
+  display: flex;
+  width: 100%;
+  height: 52px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 26px;
+  cursor: pointer;
+  outline: none;
+}
+section.preview-content .box .card-form form .btn-generate-card span {
+  color: #ffffff;
+  font-family: "Chewy Regular";
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+section.preview-content .box .card-form span.error-msg {
+  float: left;
+  color: #f3637a;
+  font-weight: 400;
+  text-align: left;
+  font-size: 12px;
+  padding: 0;
+  line-height: 0;
+  position: relative;
+  top: 10px;
+  font-family: "Avenir Book";
+  width: max-content;
+  left: 2px;
+}
+section.preview-content .box .card-answer {
+  display: none;
+  flex-direction: column;
+}
+section.preview-content .box .card-answer.active {
+  display: flex !important;
+  justify-content: center;
+  padding: 14px 0 0;
+}
+@media screen and (max-width: 335px) {
+  section.preview-content .box .card-answer.active {
+    padding: 0;
+  }
+}
+section.preview-content .box .card-answer .img-check {
+  text-align: center;
+}
+section.preview-content .box .card-answer .img-check img {
+  width: 100%;
+  max-width: 220px;
+}
+section.preview-content .box .card-answer .title {
+  color: #00cc02;
+  font-size: 22px;
+  font-family: "Avenir Black";
+  text-align: center;
+  padding: 10px;
+}
+section.preview-content .box .card-answer .msg {
+  color: #000000;
+  font-family: "Avenir Black";
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 28px;
+  text-align: center;
+  padding: 0 10px;
+}
+@media screen and (max-width: 380px) {
+  section.preview-content .box .card-answer .msg {
+    font-size: 20px;
+  }
+}
+section.preview-content .box .card-answer .msg2 {
+  color: rgba(40, 45, 57, 0.6);
+  font-family: "Avenir Roman";
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 28px;
+  padding-top: 15px;
+  text-align: center;
+}
+@media screen and (max-width: 380px) {
+  section.preview-content .box .card-answer .msg2 {
+    font-size: 16px;
+  }
+}
+section.preview-content .box .card-answer .msg2 span {
+  color: #00cc02;
+  font-weight: 500;
+}
+section.preview-content .canvas-content {
+  max-width: 100%;
+}
+section.preview-content .canvas-content canvas {
+  max-width: 500px;
+  width: 100%;
+}
 footer {
   background-color: #379abb;
   min-height: 100px;
