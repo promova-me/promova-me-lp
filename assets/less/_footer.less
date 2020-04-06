@@ -82,6 +82,7 @@ footer {
 
         .left {
             display: flex;
+            flex-direction: column;
 
             @media @breakTabletMin {
                 flex-direction: column;
@@ -97,6 +98,12 @@ footer {
                     border-radius: 5px;
                     border: 2px solid @blue-predominant;
                 }
+            }
+            h5 {
+                color: @white;
+                font-size: 14px;
+                font-family: "Avenir Book";
+                padding-top: 5px;
             }
         }
     }

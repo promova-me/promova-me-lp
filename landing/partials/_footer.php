@@ -1,12 +1,13 @@
 <footer>
     <div class="container">
-        <a href="#hero" rel="rel" class="back-to-top">
+        <a href="#header" rel="rel" class="back-to-top">
             <span>Voltar ao topo</span>
         </a>
         <div class="left col-md-5 col-sm-12">
             <div class="image-logo">
                 <img src="assets/images/logo-promova-me.png" alt="" class="logo">
             </div>
+            <h5>#ajudeopequenoempreendedor</h5>
         </div>
         <div class="middle col-md-4 col-sm-12">
             <h4 class="title">Menu</h4>

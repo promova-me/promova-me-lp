@@ -23,32 +23,47 @@ $colors = array('Azul','Amarelo','Laranja','Verde','Vermelho');
                         <form id="form-generate-card">
 
                             <div class="form-group">
-                                <input type="text" placeholder="Seu nome ou da sua empresa" class="form-control" id="name-form" maxlength="30" required="required">
+                                <input type="text" placeholder="Seu nome ou da sua empresa" tabindex="1" class="form-control" id="name-form" maxlength="30" required="required">
                             </div>
                             <div class="form-group">
-                                <input type="text" placeholder="Descrição do produto ou serviço" class="form-control" id="desc-form" maxlength="50" required="required">
+                                <input type="text" placeholder="Descrição do produto ou serviço" tabindex="2" class="form-control" id="desc-form" maxlength="50" required="required">
                             </div>
                             <div class="form-group">
-                                <input type="tel" placeholder="Telefone para contato" class="form-control" id="phone-form" required="required">
+                                <input type="tel" placeholder="Telefone para contato" tabindex="3" class="form-control" id="phone-form" required="required">
                             </div>
                             <div class="form-group">
-                                <input type="text" placeholder="Região de entrega" class="form-control" id="delivery-form" required="required">
+                                <input type="text" placeholder="Região de entrega" tabindex="4" class="form-control" id="delivery-form" required="required">
                             </div>
                             <div class="form-group">
+                                <input type="email" placeholder="E-mail" class="form-control" tabindex="5" id="email-form" required="required">
+                            </div>
+                            <!--<div class="form-group">
                                 <select class="form-control" id="color-form" tabindex="5">
                                     <option selected disabled value="">Escolha uma cor desejada</option>
                                     <?php
-                                    foreach ($colors as $color){ ?>
-                                        <option value="<?= strtolower($color) ?>"><?= $color ?></option>
+                            /*                                    foreach ($colors as $color){ */?>
+                                        <option value="<?/*= strtolower($color) */?>"><?/*= $color */?></option>
                                         <?php
-                                    } ?>
+                            /*                                    } */?>
                                 </select>
-                            </div>
+                            </div>-->
                             <div class="form-group">
-                                <input type="file" id="file-chooser" class="file-chooser form-control" accept="image/*" required="required" />
+                                <input type="file" tabindex="5" id="file-chooser" class="file-chooser form-control" accept="image/*" required="required" />
                             </div>
-
                             <span class="error-msg"></span>
+
+                            <div class="form-group">
+                                <ul class="terms">
+                                    <li>
+                                        <input class="styled-checkbox" tabindex="6" id="info-form" type="checkbox" value="value1">
+                                        <label for="info-form"><span>Aceito compartilhar minhas informações com o Promova.me</span></label>
+                                    </li>
+                                    <li>
+                                        <input class="styled-checkbox" tabindex="7" id="newsletter-form" type="checkbox" value="value1">
+                                        <label for="newsletter-form">Quero receber novidades e dicas em meu e-mail</label>
+                                    </li>
+                                </ul>
+                            </div>
                             <a class="cta cta-orange" id="btn-generate-card" tabindex="8">
                                 <span>Gerar Grátis</span>
                             </a>
@@ -65,38 +80,30 @@ $colors = array('Azul','Amarelo','Laranja','Verde','Vermelho');
                             <div class="share-content">
                                 <h3 class="title-share">Compartilhe sua imagem ou baixe agora</h3>
                                 <div class="share-links">
-                                    <a id="facebook">
-                                        <i class="fa fa-facebook-square" aria-hidden="true"></i>
-                                        <span>Facebook</span>
-                                    </a>
-                                    <a id="instagram">
-                                        <i class="fa fa-instagram" aria-hidden="true"></i>
-                                        <span>Instagram</span>
-                                    </a>
-                                    <a id="whatsapp">
-                                        <i class="fa fa-whatsapp" aria-hidden="true"></i>
-                                        <span>WhatsaApp</span>
-                                    </a>
-                                    <a id="download" onclick="FinalCard.downloadCard()">
-                                        <i class="fa fa-download" aria-hidden="true"></i>
-                                        <span>Download</span>
-                                    </a>
+                                    <div class="line">
+                                        <a id="facebook">
+                                            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                                            <span>Facebook</span>
+                                        </a>
+                                        <a id="instagram">
+                                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                                            <span>Instagram</span>
+                                        </a>
+                                    </div>
+                                    <div class="line">
+                                        <a id="whatsapp">
+                                            <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                                            <span>WhatsaApp</span>
+                                        </a>
+                                        <a id="download" onclick="FinalCard.downloadCard()">
+                                            <i class="fa fa-download" aria-hidden="true"></i>
+                                            <span>Download</span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
 
-                            <h4 class="msg2">Quer receber novidades e dicas direto no seu e-mail?</h4>
-
-                            <form id="form-get-email">
-                                <div class="form-group input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="Insira seu e-mail" aria-label="Insira seu e-mail" aria-describedby="basic-addon2">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-outline-secondary" type="button">Quero!</button>
-                                    </div>
-                                </div>
-                                <span class="error-msg"></span>
-                            </form>
-
-                            <a class="cta cta-orange" id="back-to-generate" rel="rel">
+                            <a class="cta cta-orange" id="back-to-generate">
                                 <span>Gerar novamente</span>
                             </a>
                         </div>
@@ -107,7 +114,7 @@ $colors = array('Azul','Amarelo','Laranja','Verde','Vermelho');
                     <canvas class="card-canvas" id="card-canvas"> </canvas>
                     <img src="/assets/images/placeholder.png" alt="" class="placeholder" id="card-placeholder">
                     <div class="look-how">
-                        <h5>Insira as informações e veja como ficará sua imagem!</h5>
+                        <h5>Insira as informações e veja como ficará sua imagem</h5>
                         <i class="fa fa-eye" aria-hidden="true"></i>
                     </div>
                 </div>
@@ -116,38 +123,30 @@ $colors = array('Azul','Amarelo','Laranja','Verde','Vermelho');
                     <div class="share-content">
                         <h3 class="title-share">Compartilhe sua imagem ou baixe agora</h3>
                         <div class="share-links">
-                            <a id="facebook">
-                                <i class="fa fa-facebook-square" aria-hidden="true"></i>
-                                <span>Facebook</span>
-                            </a>
-                            <a id="instagram">
-                                <i class="fa fa-instagram" aria-hidden="true"></i>
-                                <span>Instagram</span>
-                            </a>
-                            <a id="whatsapp">
-                                <i class="fa fa-whatsapp" aria-hidden="true"></i>
-                                <span>WhatsaApp</span>
-                            </a>
-                            <a id="download" onclick="FinalCard.downloadCard()">
-                                <i class="fa fa-download" aria-hidden="true"></i>
-                                <span>Download</span>
-                            </a>
+                            <div class="line">
+                                <a id="facebook">
+                                    <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                                    <span>Facebook</span>
+                                </a>
+                                <a id="instagram">
+                                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                                    <span>Instagram</span>
+                                </a>
+                            </div>
+                            <div class="line">
+                                <a id="whatsapp">
+                                    <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                                    <span>WhatsaApp</span>
+                                </a>
+                                <a id="download" onclick="FinalCard.downloadCard()">
+                                    <i class="fa fa-download" aria-hidden="true"></i>
+                                    <span>Download</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
-                    <h4 class="msg2">Quer receber novidades e dicas direto no seu e-mail?</h4>
-
-                    <form id="form-get-email">
-                        <div class="form-group input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Insira seu e-mail" aria-label="Insira seu e-mail" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="button">Quero!</button>
-                            </div>
-                        </div>
-                        <span class="error-msg"></span>
-                    </form>
-
-                    <a class="cta cta-orange" id="back-to-generate" rel="rel">
+                    <a class="cta cta-orange" id="back-to-generate-mobile">
                         <span>Gerar novamente</span>
                     </a>
                 </div>

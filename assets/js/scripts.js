@@ -13,8 +13,6 @@ $(function() {
         if (Validation.validateCardForm()){
             CardData.setCardData();
             Effects.switchScreenOnBox('#card-placeholder', '#card-canvas');
-
-            $(".look-how h5").text("Veja como sua imagem ficou!");
             $(".bottom-share.mobile").addClass('preview');
 
             if ($(window).innerWidth() >= 768) {
@@ -23,13 +21,17 @@ $(function() {
                 Effects.switchScreenOnBox('.bottom-share.desktop', '.bottom-share.mobile');
                 Effects.switchScreenOnBox('.card-form', '.card-answer');
             }
+
+            // AJAX AQUI
+            // CardData.sendCardData();
         }
     });
 
     // back-to-generate
-    $('#back-to-generate').click( function () {
-        // $(".bottom-share.mobile").removeClass('preview');
+    $('#back-to-generate, #back-to-generate-mobile').click( function () {
+        $(".bottom-share.mobile").removeClass('preview');
         Effects.switchScreenOnBox('.card-answer', '.card-form');
+        Effects.switchScreenOnBox('#card-canvas', '#card-placeholder');
     });
 
     // Remove error validation on focus field
@@ -50,6 +52,7 @@ $(function() {
         var ctx = canvas.getContext("2d");
         var fileinput = document.getElementById('file-chooser'); // input file
         var img = new Image();
+        var defaultColor = Color.getDefaultColor();
 
         canvas.width = 600;
         canvas.height = 600;
@@ -73,7 +76,7 @@ $(function() {
                             ctx.drawImage(img,0,0, canvas.width, canvas.height);
 
                             // Desenha os quadrados
-                            ctx.fillStyle = "rgb(196,30,73)";
+                            ctx.fillStyle = defaultColor;
                             ctx.beginPath();
                             ctx.fillRect(400, 0, 200, 600);
                             ctx.closePath();
@@ -161,6 +164,31 @@ $(function() {
 
 });
 
+const Color = {
+    azul: "#379abb",
+    amarelo: "#ffff00",
+    verde: "#008000",
+    laranja: "#d79f2e",
+    vermelho: "#c64548",
+
+    getDefaultColor: function () {
+        if (CardData.color){
+            if (CardData.color == 'azul')
+                return this.azul;
+            else if (CardData.color == 'amarelo')
+                return this.amarelo;
+            else if (CardData.color == 'verde')
+                return this.verde;
+            else if (CardData.color == 'laranja')
+                return this.laranja;
+            else if (CardData.color == 'vermelho')
+                return this.vermelho;
+        } else
+            return this.vermelho;
+    }
+
+};
+
 const Slider = {
     initSliderStepsCards: function () {
         $('#sliderStepsCards').lightSlider({
@@ -190,8 +218,9 @@ const Effects = {
     },
 
     switchScreenOnBox: function (close, open) {
+        $(close).removeClass('active');
         $(close).hide();
-        $(open).fadeIn(500).addClass('active');
+        $(open).fadeIn(500);
     }
 
 };
@@ -202,8 +231,8 @@ const CardData = {
     desc: '',
     phone: '',
     delivery: '',
-    color: '',
     email: '',
+    newsletter: false,
     preview: false,
 
     setCardData: function () {
@@ -212,16 +241,32 @@ const CardData = {
             this.desc = $('#desc-form').val();
             this.phone = $('#phone-form').val();
             this.delivery = $('#delivery-form').val();
-            this.color = $('#color-form').children("option:selected").val();
+            this.email = $('#email-form').val();
+            this.newsletter = $('#newsletter-form').is(':checked');
         } catch (e) {
             return false
         }
         return true;
     },
 
-    setEmailForNewsletter: function () {
-        this.email= $('#email-form').val();
-    }
+    sendCardData: function (){
+        $.ajax({
+            type: "POST",
+            url: 'http://localhost::81/',
+            dataType: 'json',
+            data: {
+                name: this.name,
+                desc: this.desc,
+                phone: this.phone,
+                delivery: this.delivery,
+                email: this.email,
+                newsletter: this.newsletter
+            },
+            success: function (response) {
+                console.log(response.status);
+            }
+        });
+    },
 
 };
 
@@ -292,7 +337,7 @@ const Validation = {
 
         }
 
-        // Validate Desc
+        // Validate Delivery
         if (!$("#delivery-form").val()) {
 
             Util.addError(this.errorFormElement, 'Informe a região de entrega/atendimento ou seu endereço');
@@ -307,27 +352,8 @@ const Validation = {
 
         }
 
-        // Validate Color
-        var selectedColor = $('#color-form').children("option:selected").val();
-        if (!selectedColor) {
-
-            Util.addError(this.errorFormElement, 'Selecione uma cor');
-            Util.addRedBorderOnErrorInput('#color-form');
-            return false;
-
-        }
-
-        // Validate File
-        if ($('#file-chooser').get(0).files.length === 0) {
-
-            Util.addError(this.errorFormElement, 'Selecione uma imagem do seu negócio');
-            Util.addRedBorderOnErrorInput('#file-chooser');
-            return false;
-
-        }
-
         // Validate E-mail
-        /*if (!$("#email-form").val()) {
+        if (!$("#email-form").val()) {
 
             Util.addError(this.errorFormElement, 'Informe seu e-mail');
             Util.addRedBorderOnErrorInput('#email-form');
@@ -348,7 +374,32 @@ const Validation = {
             str = str.replace(/\n/g, "");
             $("#email-form").val(str);
 
+        }
+
+        // Validate Color
+        /*var selectedColor = $('#color-form').children("option:selected").val();
+        if (!selectedColor) {
+
+            Util.addError(this.errorFormElement, 'Selecione uma cor');
+            Util.addRedBorderOnErrorInput('#color-form');
+            return false;
+
         }*/
+
+        // Validate File
+        if ($('#file-chooser').get(0).files.length === 0) {
+
+            Util.addError(this.errorFormElement, 'Selecione uma imagem do seu negócio');
+            Util.addRedBorderOnErrorInput('#file-chooser');
+            return false;
+
+        }
+
+        // Validate Terms
+        if (!$('#info-form').is(':checked')){
+            Util.addError(this.errorFormElement, 'Aceite as condições para continuar.');
+            return false;
+        }
 
         return true;
 

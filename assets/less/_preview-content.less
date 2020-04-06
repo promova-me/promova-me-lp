@@ -18,11 +18,21 @@ section.preview-content {
         letter-spacing: 0.88px;
         line-height: 50px;
         text-align: center;
-        text-align: center;
+
+        @media @breakTabletMax {
+            font-size: 36px;
+        }
+
+        @media screen and (max-width: 392px){
+            font-size: 32px;
+        }
     }
 
     .card-generator {
         padding-top: 40px;
+        @media @breakTabletMax {
+            padding-top: 20px;
+        }
     }
 
     #imageEditor {
@@ -73,7 +83,7 @@ section.preview-content {
     }
 
 
-//    Form old
+    //    Form old
     .box {
         box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.15);
         border-radius: 24px;
@@ -84,7 +94,10 @@ section.preview-content {
         margin: 0;
 
         @media @breakTabletMin {
-            margin: 40px auto 10px;
+            padding: 20px 0;
+        }
+        @media @breakTabletMin {
+            margin: 20px auto 10px;
         }
 
         .card-form {
@@ -101,14 +114,70 @@ section.preview-content {
                 @media @breakTabletMax{
                     font-size: 18px;
                 }
-                @media screen and (max-width: 370px){
-                    font-size: 16px;
-                    padding-bottom: 5px;
+            }
+
+            .terms {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                padding: 0;
+                list-style: none;
+                margin: 30px auto 0;
+
+                li {
+                    font-family: "Avenir Roman";
+                    font-size: 14px;
+                    color: #69707b;
+                    margin: 2px 0;
+
+                    .styled-checkbox {
+                        position: absolute;
+                        opacity: 0;
+
+                        & + label {
+                            position: relative;
+                            cursor: pointer;
+                            padding: 0;
+                            display: flex;
+                        }
+
+                        & + label:before {
+                            content: '';
+                            margin-right: 10px;
+                            display: inline-block;
+                            vertical-align: text-top;
+                            min-width: 18px;
+                            height: 18px;
+                            background: white;
+                            border: 1px solid #69707b;
+                            border-radius: 3px;
+                        }
+
+                        &:checked + label:after {
+                            content: '';
+                            position: absolute;
+                            left: 3px;
+                            top: 8px;
+                            background: @text-gray-3;
+                            width: 2px;
+                            height: 2px;
+                            box-shadow:
+                                2px 0 0 @text-gray-3,
+                                4px 0 0 @text-gray-3,
+                                    4px -2px 0 @text-gray-3,
+                                    4px -4px 0 @text-gray-3,
+                                    4px -6px 0 @text-gray-3,
+                                    4px -8px 0 @text-gray-3;
+                            transform: rotate(45deg);
+                        }
+                    }
+
                 }
+
             }
 
             .cta {
-                margin: 25px auto 10px;
+                margin: 15px auto 10px;
             }
 
         }
@@ -117,21 +186,15 @@ section.preview-content {
             display: none;
             flex-direction: column;
 
-            &.active {
-                display: flex !important;
-                justify-content: center;
-                padding: 14px 0 0;
-                @media screen and (max-width: 335px) {
-                    padding: 0;
-                }
-            }
-
             .img-check {
                 text-align: center;
 
                 img {
                     width: 100%;
                     max-width: 140px;
+                    @media @breakMobileMax {
+                        max-width: 110px;
+                    }
                 }
             }
 
@@ -147,6 +210,8 @@ section.preview-content {
         .bottom-share {
             &.mobile {
                 display: none;
+                width: 100%;
+                margin: 0 15px;
 
                 &.preview {
                     @media @breakTabletMin {
@@ -206,22 +271,45 @@ section.preview-content {
                     font-family: "Avenir Black";
                     text-align: center;
                     line-height: 25px;
-                    padding-bottom: 5px;
                 }
 
                 .share-links {
                     display: flex;
-                    justify-content: space-around;
+                    justify-content: center;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-top: 20px;
+
+                    @media @breakTabletMin {
+
+                    }
+
+                    .line {
+                        display: flex;
+                        justify-content: space-evenly;
+                        width: 100%;
+                        padding: 5px 0 10px;
+
+                        a {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            i {
+                                font-size: 28px;
+                            }
+                        }
+                    }
 
                     a {
                         font-family: "Avenir Roman";
-                        font-size: 14px;
+                        font-size: 12px;
                     }
                 }
             }
 
             .cta {
-                margin: 10px auto;
+                margin: 30px auto 0;
             }
         }
 
@@ -292,21 +380,19 @@ section.preview-content {
         justify-content: center;
         align-items: center;
 
+        @media @breakTabletMin {
+            padding-top: 40px;
+        }
+
         canvas {
             max-width: 500px;
-            width: 90%;
+            width: 100%;
             display: none;
-            @media @breakTabletMax {
-                width: 100%;
-            }
         }
 
         img.placeholder {
             max-width: 500px;
-            width: 90%;
-            @media @breakTabletMax {
-                width: 100%;
-            }
+            width: 100%;
         }
 
         .look-how {
