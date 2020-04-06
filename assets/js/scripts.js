@@ -8,12 +8,28 @@ $(function() {
     // Init Effects
     Effects.initLinkRel();
 
-    // Btn Form Lead clicked
-    $('.btn-generate-card').click( function () {
+    // Btn Form Card clicked
+    $('#btn-generate-card').click( function () {
         if (Validation.validateCardForm()){
             CardData.setCardData();
-            Effects.switchScreenOnBox('form', 'answer');
+            Effects.switchScreenOnBox('#card-placeholder', '#card-canvas');
+
+            $(".look-how h5").text("Veja como sua imagem ficou!");
+            $(".bottom-share.mobile").addClass('preview');
+
+            if ($(window).innerWidth() >= 768) {
+                Effects.switchScreenOnBox('.card-form', '.card-answer');
+            } else  {
+                Effects.switchScreenOnBox('.bottom-share.desktop', '.bottom-share.mobile');
+                Effects.switchScreenOnBox('.card-form', '.card-answer');
+            }
         }
+    });
+
+    // back-to-generate
+    $('#back-to-generate').click( function () {
+        // $(".bottom-share.mobile").removeClass('preview');
+        Effects.switchScreenOnBox('.card-answer', '.card-form');
     });
 
     // Remove error validation on focus field
@@ -49,7 +65,7 @@ $(function() {
                     if( evt.target.readyState == FileReader.DONE) {
                         img.src = evt.target.result;
 
-                        $('.btn-generate-card').click( function () {
+                        $('#btn-generate-card').click( function () {
                             // Limpa o Canvas
                             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -174,8 +190,8 @@ const Effects = {
     },
 
     switchScreenOnBox: function (close, open) {
-        $(".card-" + close).hide();
-        $(".card-" + open).fadeIn(500).addClass('active');
+        $(close).hide();
+        $(open).fadeIn(500).addClass('active');
     }
 
 };

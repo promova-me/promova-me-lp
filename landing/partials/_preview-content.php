@@ -10,30 +10,29 @@ $colors = array('Azul','Amarelo','Laranja','Verde','Vermelho');
         </h1>
 
 
-        <div class="row card-generator">
+        <div class="card-generator">
 
-            <div class="col-md-6">
+            <div class="row box">
 
                 <div id="form-anchor"></div>
 
-                <div class="box">
-
+                <div class="col-md-6">
                     <div class="card-form">
-                        <h4 class="title-form">Insira as informações</h4>
+                        <h4 class="title-form">Vamos começar? <br>Insira as informações</h4>
 
                         <form id="form-generate-card">
 
                             <div class="form-group">
-                                <input type="text" placeholder="Seu nome ou da sua empresa" class="form-control" id="name-form" maxlength="30" required="required" value="dsvsdfbvsdfbfds">
+                                <input type="text" placeholder="Seu nome ou da sua empresa" class="form-control" id="name-form" maxlength="30" required="required">
                             </div>
                             <div class="form-group">
-                                <input type="text" placeholder="Descrição do produto ou serviço" class="form-control" id="desc-form" maxlength="50" required="required" value="dsavsdfvf sdvsdav sdvsdav sdvsdvsadv">
+                                <input type="text" placeholder="Descrição do produto ou serviço" class="form-control" id="desc-form" maxlength="50" required="required">
                             </div>
                             <div class="form-group">
-                                <input type="tel" placeholder="Telefone para contato" class="form-control" id="phone-form" required="required" value="(35) 99999-9999">
+                                <input type="tel" placeholder="Telefone para contato" class="form-control" id="phone-form" required="required">
                             </div>
                             <div class="form-group">
-                                <input type="text" placeholder="Região de entrega" class="form-control" id="delivery-form" required="required" value="dasvsadfvfdsvfdsvfvsfdvfsdvdds">
+                                <input type="text" placeholder="Região de entrega" class="form-control" id="delivery-form" required="required">
                             </div>
                             <div class="form-group">
                                 <select class="form-control" id="color-form" tabindex="5">
@@ -50,7 +49,7 @@ $colors = array('Azul','Amarelo','Laranja','Verde','Vermelho');
                             </div>
 
                             <span class="error-msg"></span>
-                            <a class="btn-generate-card" tabindex="8">
+                            <a class="cta cta-orange" id="btn-generate-card" tabindex="8">
                                 <span>Gerar Grátis</span>
                             </a>
                         </form>
@@ -60,27 +59,99 @@ $colors = array('Azul','Amarelo','Laranja','Verde','Vermelho');
                         <div class="img-check">
                             <img src="/assets/images/check.png" alt="">
                         </div>
-                        <h3 class="title">Parabéns!</h3>
-                        <h4 class="msg">Você gerou com sucesso sua imagem promocional.</h4>
-                        <h4 class="msg2">Quer receber novidades e dicas direto no seu e-mail?</h4>
-                        <form id="form-email">
-                            <div class="form-group half">
-                                <input type="email" placeholder="Seu nome ou da sua empresa" class="form-control" id="email-form">
-                                <input type="button" class="form-control" id="cta-email-form" value="Quero!">
+                        <h3 class="title">Pronto! Você gerou com sucesso sua imagem promocional.</h3>
+
+                        <div class="bottom-share desktop" id="bottom-share">
+                            <div class="share-content">
+                                <h3 class="title-share">Compartilhe sua imagem ou baixe agora</h3>
+                                <div class="share-links">
+                                    <a id="facebook">
+                                        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                                        <span>Facebook</span>
+                                    </a>
+                                    <a id="instagram">
+                                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                                        <span>Instagram</span>
+                                    </a>
+                                    <a id="whatsapp">
+                                        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                                        <span>WhatsaApp</span>
+                                    </a>
+                                    <a id="download" onclick="FinalCard.downloadCard()">
+                                        <i class="fa fa-download" aria-hidden="true"></i>
+                                        <span>Download</span>
+                                    </a>
+                                </div>
                             </div>
-                        </form>
-                        <button onclick="FinalCard.downloadCard()">
-                            Baixar Cartão
-                        </button>
+
+                            <h4 class="msg2">Quer receber novidades e dicas direto no seu e-mail?</h4>
+
+                            <form id="form-get-email">
+                                <div class="form-group input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Insira seu e-mail" aria-label="Insira seu e-mail" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" type="button">Quero!</button>
+                                    </div>
+                                </div>
+                                <span class="error-msg"></span>
+                            </form>
+
+                            <a class="cta cta-orange" id="back-to-generate" rel="rel">
+                                <span>Gerar novamente</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 canvas-content">
+                    <canvas class="card-canvas" id="card-canvas"> </canvas>
+                    <img src="/assets/images/placeholder.png" alt="" class="placeholder" id="card-placeholder">
+                    <div class="look-how">
+                        <h5>Insira as informações e veja como ficará sua imagem!</h5>
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+                <div class="bottom-share mobile" id="bottom-share">
+                    <div class="share-content">
+                        <h3 class="title-share">Compartilhe sua imagem ou baixe agora</h3>
+                        <div class="share-links">
+                            <a id="facebook">
+                                <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                                <span>Facebook</span>
+                            </a>
+                            <a id="instagram">
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a id="whatsapp">
+                                <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                                <span>WhatsaApp</span>
+                            </a>
+                            <a id="download" onclick="FinalCard.downloadCard()">
+                                <i class="fa fa-download" aria-hidden="true"></i>
+                                <span>Download</span>
+                            </a>
+                        </div>
                     </div>
 
-                </div>
-            </div>
+                    <h4 class="msg2">Quer receber novidades e dicas direto no seu e-mail?</h4>
 
-            <div class="col-md-6">
-                <div class="canvas-content">
-                    <canvas class="card-canvas" id="card-canvas"> </canvas>
+                    <form id="form-get-email">
+                        <div class="form-group input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Insira seu e-mail" aria-label="Insira seu e-mail" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button">Quero!</button>
+                            </div>
+                        </div>
+                        <span class="error-msg"></span>
+                    </form>
+
+                    <a class="cta cta-orange" id="back-to-generate" rel="rel">
+                        <span>Gerar novamente</span>
+                    </a>
                 </div>
+
             </div>
 
         </div>
