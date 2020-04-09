@@ -1,7 +1,9 @@
 <?php
+var_dump($_POST);
 
 try {
     $pdo = new PDO('mysql:host=localhost;dbname=promovam_db', 'promovam_admin', '@pR0mOv4M3#');
+//    $pdo = new PDO('mysql:host=localhost;dbname=promovam_db', 'root', '');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $stmt = $pdo->prepare('INSERT INTO company (name,phone,email,where_deliver,services,newsletter) 
@@ -12,7 +14,7 @@ try {
         ':email' => $_POST['email'],
         ':where_deliver' => utf8_decode($_POST['delivery']),
         ':services' => utf8_decode($_POST['desc']),
-        ':newsletter' => $_POST['newsletter'],
+        ':newsletter' => $_POST['newsletter']=='true' ? 1:0,
 
     ));
     echo $stmt->rowCount();
