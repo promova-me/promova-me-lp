@@ -22,32 +22,30 @@ $colors = array('Azul','Amarelo','Laranja','Verde','Vermelho');
                         <form id="form-generate-card">
 
                             <div class="form-group">
-                                <input value="Nome da Empresa" type="text" placeholder="Seu nome ou da sua empresa" tabindex="1" class="form-control" id="name-form" maxlength="30" required="required">
+                                <input type="text" placeholder="Seu nome ou da sua empresa" tabindex="1" class="form-control" id="name-form" maxlength="30" required="required">
                             </div>
                             <div class="form-group">
-                                <textarea rows="2" cols="50" placeholder="Descrição do produto ou serviço" class="form-control" id="desc-form" maxlength="60" required="required">Descrição do produto ou serviço</textarea>
-<!--                                <input type="text" placeholder="Descrição do produto ou serviço" tabindex="2" class="form-control" id="desc-form" maxlength="50" required="required">-->
+                                <textarea rows="2" cols="50" placeholder="Descrição do produto ou serviço" class="form-control" id="desc-form" maxlength="60" required="required"></textarea>
                             </div>
                             <div class="form-group">
-                                <input value="(99) 99999-9999" type="tel" placeholder="Telefone para contato" tabindex="3" class="form-control" id="phone-form" required="required">
+                                <input type="tel" placeholder="Telefone para contato" tabindex="3" class="form-control" id="phone-form" required="required">
                             </div>
                             <div class="form-group">
-                                <input value="Região de entrega ou endereço para retirada" type="text" placeholder="Região de entrega" tabindex="4" class="form-control" id="delivery-form" required="required">
+                                <input type="text" placeholder="Região de entrega" tabindex="4" class="form-control" id="delivery-form" required="required">
                             </div>
                             <div class="form-group">
-                                <input value="empresa@email.com" type="email" placeholder="E-mail" class="form-control" tabindex="5" id="email-form" required="required">
+                                <input type="email" placeholder="E-mail" class="form-control" tabindex="5" id="email-form" required="required">
                             </div>
                             <div class="form-group">
-                                <select class="form-control" id="layout-form" tabindex="7">
-<!--                                    <option selected disabled value="">Selecione onde ficará suas informações</option>-->
-                                    <option selected value="left">Esquerda</option>
+                                <select class="form-control" id="layout-form" tabindex="6">
+                                    <option selected disabled value="">Selecione onde ficará suas informações</option>
+                                    <option value="left">Esquerda</option>
                                     <option value="right">Direita</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="form-control" id="color-form" tabindex="6">
-<!--                                    <option selected disabled value="">Escolha uma cor desejada</option>-->
-                                    <option selected value="vermelho>">Vermelho</option>
+                                <select class="form-control" id="color-form" tabindex="7">
+                                    <option selected disabled value="">Escolha uma cor desejada</option>
                                     <?php
                                     foreach ($colors as $color){ ?>
                                         <option value="<?= strtolower($color) ?>"><?= $color ?></option>
@@ -56,18 +54,18 @@ $colors = array('Azul','Amarelo','Laranja','Verde','Vermelho');
                                 </select>
                             </div>
                             <div class="form-group">
-                                <input type="file" tabindex="5" id="file-chooser" class="file-chooser form-control" accept="image/*" required="required" />
+                                <input type="file" tabindex="8" id="file-chooser" class="file-chooser form-control" accept="image/*" required="required" />
                             </div>
                             <span class="error-msg"></span>
 
                             <div class="form-group">
                                 <ul class="terms">
                                     <li>
-                                        <input checked class="styled-checkbox" tabindex="6" id="info-form" type="checkbox" value="value1">
+                                        <input class="styled-checkbox" tabindex="9" id="info-form" type="checkbox" value="value1">
                                         <label for="info-form"><span>Aceito compartilhar minhas informações com o Promova.me</span></label>
                                     </li>
                                     <li>
-                                        <input class="styled-checkbox" tabindex="7" id="newsletter-form" type="checkbox" value="value1">
+                                        <input class="styled-checkbox" tabindex="10" id="newsletter-form" type="checkbox" value="value1">
                                         <label for="newsletter-form">Quero receber novidades e dicas em meu e-mail</label>
                                     </li>
                                 </ul>

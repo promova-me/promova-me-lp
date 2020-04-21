@@ -32,7 +32,7 @@ $(function() {
             }
 
             // AJAX AQUI
-            // CardData.sendCardData();
+            CardData.sendCardData();
         }
     });
 
