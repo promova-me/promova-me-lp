@@ -9,7 +9,6 @@ $colors = array('Azul','Amarelo','Laranja','Verde','Vermelho');
             Mão na massa
         </h1>
 
-
         <div class="card-generator">
 
             <div class="row box">
@@ -23,30 +22,39 @@ $colors = array('Azul','Amarelo','Laranja','Verde','Vermelho');
                         <form id="form-generate-card">
 
                             <div class="form-group">
-                                <input type="text" placeholder="Seu nome ou da sua empresa" tabindex="1" class="form-control" id="name-form" maxlength="30" required="required">
+                                <input value="Nome da Empresa" type="text" placeholder="Seu nome ou da sua empresa" tabindex="1" class="form-control" id="name-form" maxlength="30" required="required">
                             </div>
                             <div class="form-group">
-                                <input type="text" placeholder="Descrição do produto ou serviço" tabindex="2" class="form-control" id="desc-form" maxlength="50" required="required">
+                                <textarea rows="2" cols="50" placeholder="Descrição do produto ou serviço" class="form-control" id="desc-form" maxlength="60" required="required">Descrição do produto ou serviço</textarea>
+<!--                                <input type="text" placeholder="Descrição do produto ou serviço" tabindex="2" class="form-control" id="desc-form" maxlength="50" required="required">-->
                             </div>
                             <div class="form-group">
-                                <input type="tel" placeholder="Telefone para contato" tabindex="3" class="form-control" id="phone-form" required="required">
+                                <input value="(99) 99999-9999" type="tel" placeholder="Telefone para contato" tabindex="3" class="form-control" id="phone-form" required="required">
                             </div>
                             <div class="form-group">
-                                <input type="text" placeholder="Região de entrega" tabindex="4" class="form-control" id="delivery-form" required="required">
+                                <input value="Região de entrega ou endereço para retirada" type="text" placeholder="Região de entrega" tabindex="4" class="form-control" id="delivery-form" required="required">
                             </div>
                             <div class="form-group">
-                                <input type="email" placeholder="E-mail" class="form-control" tabindex="5" id="email-form" required="required">
+                                <input value="empresa@email.com" type="email" placeholder="E-mail" class="form-control" tabindex="5" id="email-form" required="required">
                             </div>
-                            <!--<div class="form-group">
-                                <select class="form-control" id="color-form" tabindex="5">
-                                    <option selected disabled value="">Escolha uma cor desejada</option>
-                                    <?php
-                            /*                                    foreach ($colors as $color){ */?>
-                                        <option value="<?/*= strtolower($color) */?>"><?/*= $color */?></option>
-                                        <?php
-                            /*                                    } */?>
+                            <div class="form-group">
+                                <select class="form-control" id="layout-form" tabindex="7">
+<!--                                    <option selected disabled value="">Selecione onde ficará suas informações</option>-->
+                                    <option selected value="left">Esquerda</option>
+                                    <option value="right">Direita</option>
                                 </select>
-                            </div>-->
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" id="color-form" tabindex="6">
+<!--                                    <option selected disabled value="">Escolha uma cor desejada</option>-->
+                                    <option selected value="vermelho>">Vermelho</option>
+                                    <?php
+                                    foreach ($colors as $color){ ?>
+                                        <option value="<?= strtolower($color) ?>"><?= $color ?></option>
+                                        <?php
+                                    } ?>
+                                </select>
+                            </div>
                             <div class="form-group">
                                 <input type="file" tabindex="5" id="file-chooser" class="file-chooser form-control" accept="image/*" required="required" />
                             </div>
@@ -55,7 +63,7 @@ $colors = array('Azul','Amarelo','Laranja','Verde','Vermelho');
                             <div class="form-group">
                                 <ul class="terms">
                                     <li>
-                                        <input class="styled-checkbox" tabindex="6" id="info-form" type="checkbox" value="value1">
+                                        <input checked class="styled-checkbox" tabindex="6" id="info-form" type="checkbox" value="value1">
                                         <label for="info-form"><span>Aceito compartilhar minhas informações com o Promova.me</span></label>
                                     </li>
                                     <li>
@@ -78,23 +86,9 @@ $colors = array('Azul','Amarelo','Laranja','Verde','Vermelho');
 
                         <div class="bottom-share desktop" id="bottom-share">
                             <div class="share-content">
-                                <h3 class="title-share">Compartilhe sua imagem ou baixe agora</h3>
+                                <h3 class="title-share">Baixe sua imagem agora</h3>
                                 <div class="share-links">
                                     <div class="line">
-                                        <a id="facebook" onclick="FinalCard.redirectToSocialMedia('facebook','desktop')">
-                                            <i class="fa fa-facebook-square" aria-hidden="true"></i>
-                                            <span>Facebook</span>
-                                        </a>
-                                        <a id="instagram" onclick="FinalCard.redirectToSocialMedia('instagram','desktop')">
-                                            <i class="fa fa-instagram" aria-hidden="true"></i>
-                                            <span>Instagram</span>
-                                        </a>
-                                    </div>
-                                    <div class="line">
-                                        <a id="whatsapp" onclick="FinalCard.redirectToSocialMedia('whatsapp','desktop')">
-                                            <i class="fa fa-whatsapp" aria-hidden="true"></i>
-                                            <span>WhatsaApp</span>
-                                        </a>
                                         <a id="download" onclick="FinalCard.downloadCard()">
                                             <i class="fa fa-download" aria-hidden="true"></i>
                                             <span>Download</span>
@@ -112,7 +106,7 @@ $colors = array('Azul','Amarelo','Laranja','Verde','Vermelho');
 
                 <div class="col-md-6 canvas-content">
                     <canvas class="card-canvas" id="card-canvas"> </canvas>
-                    <img src="/assets/images/placeholder.png" alt="" class="placeholder" id="card-placeholder">
+                    <img src="/assets/images/placeholder-left.png" alt="" class="placeholder" id="card-placeholder">
                     <div class="look-how">
                         <h5>Insira as informações e veja como ficará sua imagem</h5>
                         <i class="fa fa-eye" aria-hidden="true"></i>
@@ -121,23 +115,9 @@ $colors = array('Azul','Amarelo','Laranja','Verde','Vermelho');
 
                 <div class="bottom-share mobile" id="bottom-share">
                     <div class="share-content">
-                        <h3 class="title-share">Compartilhe sua imagem ou baixe agora</h3>
+                        <h3 class="title-share">Baixe sua imagem agora</h3>
                         <div class="share-links">
                             <div class="line">
-                                <a id="facebook" onclick="FinalCard.redirectToSocialMedia('facebook','mobile')">
-                                    <i class="fa fa-facebook-square" aria-hidden="true"></i>
-                                    <span>Facebook</span>
-                                </a>
-                                <a id="instagram" onclick="FinalCard.redirectToSocialMedia('instagram','mobile')">
-                                    <i class="fa fa-instagram" aria-hidden="true"></i>
-                                    <span>Instagram</span>
-                                </a>
-                            </div>
-                            <div class="line">
-                                <a id="whatsapp" onclick="FinalCard.redirectToSocialMedia('whatsapp','mobile')">
-                                    <i class="fa fa-whatsapp" aria-hidden="true"></i>
-                                    <span>WhatsaApp</span>
-                                </a>
                                 <a id="download" onclick="FinalCard.downloadCard()">
                                     <i class="fa fa-download" aria-hidden="true"></i>
                                     <span>Download</span>

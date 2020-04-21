@@ -8,6 +8,15 @@ $(function() {
     // Init Effects
     Effects.initLinkRel();
 
+    // On change layout, placeholder change
+    $('#layout-form').on('change', function() {
+        if (this.value == 'left'){
+            $('#card-placeholder').attr("src", "./assets/images/placeholder-left.png");
+        } else {
+            $('#card-placeholder').attr("src", "./assets/images/placeholder-right.png");
+        }
+    });
+
     // Btn Form Card clicked
     $('#btn-generate-card').click( function () {
         if (Validation.validateCardForm()){
@@ -23,7 +32,7 @@ $(function() {
             }
 
             // AJAX AQUI
-            CardData.sendCardData();
+            // CardData.sendCardData();
         }
     });
 
@@ -69,71 +78,162 @@ $(function() {
                         img.src = evt.target.result;
 
                         $('#btn-generate-card').click( function () {
+                            // Pega a cor selecionada
+                            defaultColor = Color.getDefaultColor();
+
                             // Limpa o Canvas
                             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
                             // Desenha imagem
                             ctx.drawImage(img,0,0, canvas.width, canvas.height);
 
-                            // Desenha os quadrados
-                            ctx.fillStyle = defaultColor;
-                            ctx.beginPath();
-                            ctx.fillRect(400, 0, 200, 600);
-                            ctx.closePath();
-                            ctx.fill();
+                            switch ($('#layout-form').children("option:selected").val()) {
 
-                            ctx.fillStyle = "rgb(255,255,255)";
-                            ctx.beginPath();
-                            ctx.fillRect(250, 100, 300, 400);
-                            ctx.closePath();
-                            ctx.fill();
+                                case 'left':
+                                    // Desenha os quadrados
+                                    ctx.fillStyle = defaultColor;
+                                    ctx.beginPath();
+                                    ctx.fillRect(0, 0, 200, 600);
+                                    ctx.closePath();
+                                    ctx.fill();
 
-                            ctx.fillStyle = "rgb(0,0,0)";
-                            ctx.beginPath();
-                            ctx.fillRect(300, 360, 300, 8);
-                            ctx.closePath();
-                            ctx.fill();
+                                    ctx.fillStyle = "#ffffff"
+                                    ctx.beginPath();
+                                    ctx.fillRect(50, 100, 300, 400);
+                                    ctx.closePath();
+                                    ctx.fill();
 
-                            // Escreve os textos
-                            // Nome da empresa, ou da pessoa
-                            var maxWidth = 250;
-                            var lineHeight = 28;
-                            var x = 280;
-                            var y = 160;
-                            var text = CardData.name;
-                            ctx.fillStyle = "#282d39";
-                            if (text.length <= 20) {
-                                ctx.font = "36px Avenir Black";
-                                lineHeight = 36;
-                            } else {
-                                ctx.font = "25px Avenir Black";
+                                    ctx.fillStyle = "rgb(0,0,0)";
+                                    ctx.beginPath();
+                                    ctx.fillRect(0, 360, 300, 8);
+                                    ctx.closePath();
+                                    ctx.fill();
+
+                                    // Escreve os textos
+                                    // Nome da empresa, ou da pessoa
+                                    var maxWidth = 250;
+                                    var lineHeight = 28;
+                                    var x = 80;
+                                    var y = 160;
+                                    var text = CardData.name;
+                                    ctx.fillStyle = "#282d39";
+                                    if (text.length <= 20) {
+                                        ctx.font = "36px Avenir Black";
+                                        lineHeight = 36;
+                                    } else {
+                                        ctx.font = "25px Avenir Black";
+                                    }
+                                    wrapText(ctx, text, x, y, maxWidth, lineHeight);
+
+                                    // Descrição do serviço ou promoção
+                                    if (text.length <= 20)
+                                        y = 235;
+                                    else
+                                        y = 250;
+                                    lineHeight = 24;
+                                    text = CardData.desc;
+                                    ctx.font = '18px Avenir Book';
+                                    ctx.fillStyle = '#282d39';
+                                    wrapText(ctx, text, x, y, maxWidth, lineHeight);
+
+                                    // Contato
+                                    y = 400;
+                                    text = 'Contato: ' + CardData.phone;
+                                    ctx.font = '16px Avenir Book';
+                                    ctx.fillStyle = '#282d39';
+                                    wrapText(ctx, text, x, y, maxWidth, lineHeight);
+
+                                    // Entrega
+                                    y = 430;
+                                    text = CardData.delivery;
+                                    ctx.font = '16px Avenir Book';
+                                    ctx.fillStyle = '#282d39';
+                                    wrapText(ctx, text, x, y, maxWidth, lineHeight);
+
+                                    // site
+                                    x = 15;
+                                    y = 570;
+                                    maxWidth = 150;
+                                    lineHeight = 14;
+                                    text = 'Imagem gerada por http://promova.me';
+                                    ctx.font = '10px Avenir Book';
+                                    ctx.fillStyle = '#ffffff';
+                                    wrapText(ctx, text, x, y, maxWidth, lineHeight);
+                                    break;
+
+                                case 'right':
+                                    // Desenha os quadrados
+                                    ctx.fillStyle = defaultColor;
+                                    ctx.beginPath();
+                                    ctx.fillRect(400, 0, 200, 600);
+                                    ctx.closePath();
+                                    ctx.fill();
+
+                                    ctx.fillStyle = "rgb(255,255,255)";
+                                    ctx.beginPath();
+                                    ctx.fillRect(250, 100, 300, 400);
+                                    ctx.closePath();
+                                    ctx.fill();
+
+                                    ctx.fillStyle = "rgb(0,0,0)";
+                                    ctx.beginPath();
+                                    ctx.fillRect(300, 360, 300, 8);
+                                    ctx.closePath();
+                                    ctx.fill();
+
+                                    // Escreve os textos
+                                    // Nome da empresa, ou da pessoa
+                                    var maxWidth = 250;
+                                    var lineHeight = 28;
+                                    var x = 280;
+                                    var y = 160;
+                                    var text = CardData.name;
+                                    ctx.fillStyle = "#282d39";
+                                    if (text.length <= 20) {
+                                        ctx.font = "36px Avenir Black";
+                                        lineHeight = 36;
+                                    } else {
+                                        ctx.font = "25px Avenir Black";
+                                    }
+                                    wrapText(ctx, text, x, y, maxWidth, lineHeight);
+
+                                    // Descrição do serviço ou promoção
+                                    if (text.length <= 20)
+                                        y = 235;
+                                    else
+                                        y = 250;
+                                    lineHeight = 24;
+                                    text = CardData.desc;
+                                    ctx.font = '18px Avenir Book';
+                                    ctx.fillStyle = '#282d39';
+                                    wrapText(ctx, text, x, y, maxWidth, lineHeight);
+
+                                    // Contato
+                                    y = 400;
+                                    text = 'Contato: ' + CardData.phone;
+                                    ctx.font = '16px Avenir Book';
+                                    ctx.fillStyle = '#282d39';
+                                    wrapText(ctx, text, x, y, maxWidth, lineHeight);
+
+                                    // Entrega
+                                    y = 430;
+                                    text = CardData.delivery;
+                                    ctx.font = '16px Avenir Book';
+                                    ctx.fillStyle = '#282d39';
+                                    wrapText(ctx, text, x, y, maxWidth, lineHeight);
+
+                                    // site
+                                    x = 500;
+                                    y = 570;
+                                    maxWidth = 150;
+                                    lineHeight = 14;
+                                    text = 'Imagem gerada por http://promova.me';
+                                    ctx.font = '10px Avenir Book';
+                                    ctx.fillStyle = '#ffffff';
+                                    wrapText(ctx, text, x, y, maxWidth, lineHeight);
+                                    break;
+
                             }
-                            wrapText(ctx, text, x, y, maxWidth, lineHeight);
-
-                            // Descrição do serviço ou promoção
-                            if (text.length <= 20)
-                                y = 235;
-                            else
-                                y = 250;
-                            lineHeight = 24;
-                            text = CardData.desc;
-                            ctx.font = '18px Avenir Book';
-                            ctx.fillStyle = '#282d39';
-                            wrapText(ctx, text, x, y, maxWidth, lineHeight);
-
-                            // Contato
-                            y = 400;
-                            text = 'Contato: ' + CardData.phone;
-                            ctx.font = '16px Avenir Book';
-                            ctx.fillStyle = '#282d39';
-                            wrapText(ctx, text, x, y, maxWidth, lineHeight);
-
-                            // Entrega
-                            y = 430;
-                            text = CardData.delivery;
-                            ctx.font = '16px Avenir Book';
-                            ctx.fillStyle = '#282d39';
-                            wrapText(ctx, text, x, y, maxWidth, lineHeight);
                         })
                     }
                 }
@@ -172,19 +272,26 @@ const Color = {
     vermelho: "#c64548",
 
     getDefaultColor: function () {
-        if (CardData.color){
-            if (CardData.color == 'azul')
+        switch ($('#color-form').children("option:selected").val()) {
+            case 'azul':
                 return this.azul;
-            else if (CardData.color == 'amarelo')
+                break;
+            case 'amarelo':
                 return this.amarelo;
-            else if (CardData.color == 'verde')
+                break;
+            case 'verde':
                 return this.verde;
-            else if (CardData.color == 'laranja')
+                break;
+            case 'laranja':
                 return this.laranja;
-            else if (CardData.color == 'vermelho')
+                break;
+            case 'vermelho':
                 return this.vermelho;
-        } else
-            return this.vermelho;
+                break;
+            default:
+                return this.vermelho;
+                break;
+        }
     }
 
 };
@@ -401,15 +508,25 @@ const Validation = {
 
         }
 
+        // Validate Layout
+        var selectedLayout = $('#layout-form').children("option:selected").val();
+        if (!selectedLayout) {
+
+            Util.addError(this.errorFormElement, 'Selecione onde ficará suas informações');
+            Util.addRedBorderOnErrorInput('#layout-form');
+            return false;
+
+        }
+
         // Validate Color
-        /*var selectedColor = $('#color-form').children("option:selected").val();
+        var selectedColor = $('#color-form').children("option:selected").val();
         if (!selectedColor) {
 
             Util.addError(this.errorFormElement, 'Selecione uma cor');
             Util.addRedBorderOnErrorInput('#color-form');
             return false;
 
-        }*/
+        }
 
         // Validate File
         if ($('#file-chooser').get(0).files.length === 0) {

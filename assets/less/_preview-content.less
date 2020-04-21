@@ -39,7 +39,7 @@ section.preview-content {
         width: 482px;
         margin: auto;
         padding: 20px;
-        border: 1px solid # 4b4b4b;
+        border: 1px solid #4b4b4b;
         -moz-border-radius: 8px;
         -webkit-border-radius: 8px;
         border-radius: 8px;
@@ -53,7 +53,7 @@ section.preview-content {
     #editor {
         display: block;
         margin: 0 20px 20px 0;
-        border: 1px solid # 4b4b4b;
+        border: 1px solid #4b4b4b;
     }
     #toolbar {
         display: block;
@@ -186,6 +186,10 @@ section.preview-content {
             display: none;
             flex-direction: column;
 
+            @media screen and (min-width: 1200px){
+                padding-top: 45px;
+            }
+
             .img-check {
                 text-align: center;
 
@@ -288,7 +292,6 @@ section.preview-content {
                         display: flex;
                         justify-content: space-evenly;
                         width: 100%;
-                        padding: 5px 0 10px;
 
                         a {
                             display: flex;
@@ -318,7 +321,7 @@ section.preview-content {
                 margin: 0;
                 display: flex;
 
-                input, select {
+                input, select, textarea {
                     height: 48px;
                     border: 1px solid #e5e5e4;
                     background-color: @white;
@@ -341,6 +344,11 @@ section.preview-content {
                     &.error {
                         border-color: @red-error;
                     }
+                }
+
+                textarea {
+                    height: inherit;
+                    resize: none;
                 }
 
                 &.half {
