@@ -4,17 +4,12 @@
         <div class="container">
             <div class="row justify-content-md-center">
                 <div class="middle col-md-8">
-                    <h2 class="title">Crie gratuitamente uma imagem personalizada para divulgação do seu negócio!</h2>
-                    <h4 class="text">Em poucos cliques você gera uma imagem promocional para divulgar nas redes sociais!</h4>
+                    <h2 class="title">Faça o cartão promocional da sua empresa em segundos!</h2>
+                    <h4 class="text">Crie gratuitamente, online e com poucos cliques uma imagem personalizada para divulgação do seu negócio.</h4>
                     <a href="#form-anchor" class="cta cta-orange" rel="rel">
                         <span>Quero criar agora</span>
                     </a>
                 </div>
-                <!--<div class="right col-md-6">
-                    <div class="image-children">
-                        <img src="/assets/images/hero-img.svg" alt="" class="children">
-                    </div>
-                </div>-->
             </div>
         </div>
     </div>
