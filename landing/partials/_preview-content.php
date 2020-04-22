@@ -87,7 +87,7 @@ $colors = array('Azul','Amarelo','Laranja','Verde','Vermelho');
                                 <h3 class="title-share">Baixe sua imagem agora</h3>
                                 <div class="share-links">
                                     <div class="line">
-                                        <a id="download" onclick="FinalCard.downloadCard()">
+                                        <a id="download" onclick="FinalCard.downloadCard()" data-toggle="modal" data-target="#myModal">
                                             <i class="fa fa-download" aria-hidden="true"></i>
                                             <span>Download</span>
                                         </a>
@@ -98,6 +98,26 @@ $colors = array('Azul','Amarelo','Laranja','Verde','Vermelho');
                             <a class="cta cta-orange" id="back-to-generate">
                                 <span>Gerar novamente</span>
                             </a>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title"><strong>Compartilhe seu cartão!</strong></h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Você pode promover o seu negócio postando o cartão nos stories do Instagram, Facebook e Whatsapp para as pessoas conhecerem mais sobre seu negócio! Não deixe também de enviar para possíveis clientes que poderiam se interessar pela sua empresa.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Entendi</button>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -116,7 +136,8 @@ $colors = array('Azul','Amarelo','Laranja','Verde','Vermelho');
                         <h3 class="title-share">Baixe sua imagem agora</h3>
                         <div class="share-links">
                             <div class="line">
-                                <a id="download" onclick="FinalCard.downloadCard()">
+<!--                                <a id="download" onclick="FinalCard.downloadCard()">-->
+                                    <a id="download" onclick="FinalCard.downloadCard()" data-toggle="modal" data-target="#myModal">
                                     <i class="fa fa-download" aria-hidden="true"></i>
                                     <span>Download</span>
                                 </a>
