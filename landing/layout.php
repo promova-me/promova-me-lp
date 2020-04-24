@@ -2,7 +2,6 @@
 <html lang="pt-br">
 <head>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=gb18030">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163775398-1"></script>
     <script>
@@ -13,13 +12,23 @@
         gtag('config', 'UA-163775398-1');
     </script>
 
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
-    <meta property="og:image" content="https://promova.me/assets/images/ogImage.png" />
-    <!--<meta property="og:description" content="Crie um card para promover seu negócio em poucos cliques. #ajudeopequenonegocio"/>-->
-    <!--<meta property="og:type" content="website"/>-->
-    <!--<meta property="og:title" content="Divulge seu produto ou serviço através de cards promocionais."/>-->
-    <meta property="og:site_name" content="Promova.me"/>
+    <!--  Title and Meta Tags  -->
     <title>Promova.me | Crie grátis uma imagem promocional para seu negócio</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="Crie gratuitamente, online e com poucos cliques uma imagem personalizada para divulgação do seu negócio.">
+    <meta name="keywords" content="divulgar, negócio, pequeno negócio, pequeno empreendedor, empreendedor, negócio, cartão promocional, empreender, propaganda, card promocional, imagem personalizada">
+    <meta name="language" content="Portuguese">
+
+    <!--  OpenGraph Tags  -->
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://promova.me">
+    <meta property="og:title" content="Promova.me | Crie grátis uma imagem promocional para seu negócio">
+    <meta property="og:site_name" content="Promova.me">
+    <meta property="og:description" content="Crie gratuitamente, online e com poucos cliques uma imagem personalizada para divulgação do seu negócio.">
+    <meta property="og:image" content="https://promova.me/assets/images/ogImage.png" />
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:type" content="website">
 
     <!--  Bootstrap & JQuery  -->
     <script src="/assets/js/jquery.min.js"></script>
