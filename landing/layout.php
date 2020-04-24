@@ -2,8 +2,23 @@
 <html lang="pt-br">
 <head>
 
-    <meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb18030">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163775398-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-163775398-1');
+    </script>
+
     <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+    <meta property="og:image" content="https://promova.me/assets/images/ogImage.png" />
+    <!--<meta property="og:description" content="Crie um card para promover seu negócio em poucos cliques. #ajudeopequenonegocio"/>-->
+    <!--<meta property="og:type" content="website"/>-->
+    <!--<meta property="og:title" content="Divulge seu produto ou serviço através de cards promocionais."/>-->
+    <meta property="og:site_name" content="Promova.me"/>
     <title>Promova.me | Crie grátis uma imagem promocional para seu negócio</title>
 
     <!--  Bootstrap & JQuery  -->
