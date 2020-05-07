@@ -8,13 +8,21 @@ $(function() {
     // Init Effects
     Effects.initLinkRel();
 
+    // input file
+
+    // Init Listener img change
+    $('#file-chooser').change(function () {
+        ImageInputFileFunctions.readURL(this);
+    });
+
     // On change layout, placeholder change
     $('#layout-form').on('change', function() {
-        if (this.value == 'left'){
-            $('#card-placeholder').attr("src", "./assets/images/placeholder-left.png");
-        } else {
-            $('#card-placeholder').attr("src", "./assets/images/placeholder-right.png");
-        }
+        CardPreview.updateLayoutPreview(this);
+    });
+
+    // On change color, preview change
+    $('#color-form').on('change', function() {
+        CardPreview.updateColorPreview();
     });
 
     // Btn Form Card clicked
@@ -85,7 +93,10 @@ $(function() {
                             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
                             // Desenha imagem
-                            ctx.drawImage(img,0,0, canvas.width, canvas.height);
+                            // ctx.drawImage(img,0,0, canvas.width, canvas.height);
+                            var offsetX = 0.5;   // center x
+                            var offsetY = 0.5;   // center y
+                            ImageInputFileFunctions.drawImageProp(ctx, img, 0, 0, canvas.width, canvas.height, offsetX, offsetY);
 
                             switch ($('#layout-form').children("option:selected").val()) {
 
@@ -93,43 +104,46 @@ $(function() {
                                     // Desenha os quadrados
                                     ctx.fillStyle = defaultColor;
                                     ctx.beginPath();
-                                    ctx.fillRect(0, 0, 200, 600);
+                                    ctx.fillRect(0, 0, 150, 600);
                                     ctx.closePath();
                                     ctx.fill();
 
-                                    ctx.fillStyle = "#ffffff"
+                                    ctx.fillStyle = "#ffffff";
                                     ctx.beginPath();
-                                    ctx.fillRect(50, 100, 300, 400);
+                                    ctx.fillRect(30, 100, 250, 400);
                                     ctx.closePath();
                                     ctx.fill();
 
                                     ctx.fillStyle = "rgb(0,0,0)";
                                     ctx.beginPath();
-                                    ctx.fillRect(0, 360, 300, 8);
+                                    ctx.fillRect(0, 400, 250, 8);
                                     ctx.closePath();
                                     ctx.fill();
 
                                     // Escreve os textos
                                     // Nome da empresa, ou da pessoa
-                                    var maxWidth = 250;
-                                    var lineHeight = 28;
-                                    var x = 80;
+                                    var maxWidth = 210;
+                                    var lineHeight = 32;
+                                    var x = 55;
                                     var y = 160;
                                     var text = CardData.name;
                                     ctx.fillStyle = "#282d39";
-                                    if (text.length <= 20) {
+                                    if (text.length <= 8) {
+                                        y = 170;
+                                        ctx.font = "40px Avenir Black";
+                                    } else if (text.length <= 22) {
                                         ctx.font = "36px Avenir Black";
-                                        lineHeight = 36;
+                                        lineHeight = 38;
                                     } else {
-                                        ctx.font = "25px Avenir Black";
+                                        ctx.font = "30px Avenir Black";
                                     }
                                     wrapText(ctx, text, x, y, maxWidth, lineHeight);
 
                                     // Descrição do serviço ou promoção
-                                    if (text.length <= 20)
-                                        y = 235;
-                                    else
+                                    if (text.length <= 22)
                                         y = 250;
+                                    else
+                                        y = 270;
                                     lineHeight = 24;
                                     text = CardData.desc;
                                     ctx.font = '18px Avenir Book';
@@ -137,15 +151,8 @@ $(function() {
                                     wrapText(ctx, text, x, y, maxWidth, lineHeight);
 
                                     // Contato
-                                    y = 400;
+                                    y = 445;
                                     text = 'Contato: ' + CardData.phone;
-                                    ctx.font = '16px Avenir Book';
-                                    ctx.fillStyle = '#282d39';
-                                    wrapText(ctx, text, x, y, maxWidth, lineHeight);
-
-                                    // Entrega
-                                    y = 430;
-                                    text = CardData.delivery;
                                     ctx.font = '16px Avenir Book';
                                     ctx.fillStyle = '#282d39';
                                     wrapText(ctx, text, x, y, maxWidth, lineHeight);
@@ -161,36 +168,36 @@ $(function() {
                                     wrapText(ctx, text, x, y, maxWidth, lineHeight);
                                     break;
 
-                                case 'right':
+                                case 'bottom':
                                     // Desenha os quadrados
                                     ctx.fillStyle = defaultColor;
                                     ctx.beginPath();
-                                    ctx.fillRect(400, 0, 200, 600);
+                                    ctx.fillRect(0, 450, 600, 150);
                                     ctx.closePath();
                                     ctx.fill();
 
-                                    ctx.fillStyle = "rgb(255,255,255)";
+                                    ctx.fillStyle = "#ffffff";
                                     ctx.beginPath();
-                                    ctx.fillRect(250, 100, 300, 400);
+                                    ctx.fillRect(100, 390, 400, 170);
                                     ctx.closePath();
                                     ctx.fill();
 
                                     ctx.fillStyle = "rgb(0,0,0)";
                                     ctx.beginPath();
-                                    ctx.fillRect(300, 360, 300, 8);
+                                    ctx.fillRect(0, 515, 450, 8);
                                     ctx.closePath();
                                     ctx.fill();
 
                                     // Escreve os textos
                                     // Nome da empresa, ou da pessoa
-                                    var maxWidth = 250;
+                                    var maxWidth = 360;
                                     var lineHeight = 28;
-                                    var x = 280;
-                                    var y = 160;
+                                    var x = 120;
+                                    var y = 432;
                                     var text = CardData.name;
                                     ctx.fillStyle = "#282d39";
-                                    if (text.length <= 20) {
-                                        ctx.font = "36px Avenir Black";
+                                    if (text.length <= 25) {
+                                        ctx.font = "32px Avenir Black";
                                         lineHeight = 36;
                                     } else {
                                         ctx.font = "25px Avenir Black";
@@ -198,10 +205,75 @@ $(function() {
                                     wrapText(ctx, text, x, y, maxWidth, lineHeight);
 
                                     // Descrição do serviço ou promoção
-                                    if (text.length <= 20)
-                                        y = 235;
-                                    else
+                                    y = 470;
+                                    lineHeight = 22;
+                                    text = CardData.desc;
+                                    ctx.font = '16px Avenir Book';
+                                    ctx.fillStyle = '#282d39';
+                                    wrapText(ctx, text, x, y, maxWidth, lineHeight);
+
+                                    // Contato
+                                    y = 545;
+                                    text = 'Contato: ' + CardData.phone;
+                                    ctx.font = '16px Avenir Book';
+                                    ctx.fillStyle = '#282d39';
+                                    wrapText(ctx, text, x, y, maxWidth, lineHeight);
+
+                                    // site
+                                    x = 15;
+                                    y = 585;
+                                    maxWidth = 300;
+                                    lineHeight = 14;
+                                    text = 'Imagem gerada por http://promova.me';
+                                    ctx.font = '10px Avenir Book';
+                                    ctx.fillStyle = '#ffffff';
+                                    wrapText(ctx, text, x, y, maxWidth, lineHeight);
+                                    break;
+
+                                case 'right':
+                                    // Desenha os quadrados
+                                    ctx.fillStyle = defaultColor;
+                                    ctx.beginPath();
+                                    ctx.fillRect(450, 0, 150, 600);
+                                    ctx.closePath();
+                                    ctx.fill();
+
+                                    ctx.fillStyle = "rgb(255,255,255)";
+                                    ctx.beginPath();
+                                    ctx.fillRect(320, 100, 250, 400);
+                                    ctx.closePath();
+                                    ctx.fill();
+
+                                    ctx.fillStyle = "rgb(0,0,0)";
+                                    ctx.beginPath();
+                                    ctx.fillRect(350, 400, 250, 8);
+                                    ctx.closePath();
+                                    ctx.fill();
+
+                                    // Escreve os textos
+                                    // Nome da empresa, ou da pessoa
+                                    var maxWidth = 210;
+                                    var lineHeight = 32;
+                                    var x = 345;
+                                    var y = 160;
+                                    var text = CardData.name;
+                                    ctx.fillStyle = "#282d39";
+                                    if (text.length <= 8) {
+                                        y = 170;
+                                        ctx.font = "40px Avenir Black";
+                                    } else if (text.length <= 22) {
+                                        ctx.font = "36px Avenir Black";
+                                        lineHeight = 38;
+                                    } else {
+                                        ctx.font = "30px Avenir Black";
+                                    }
+                                    wrapText(ctx, text, x, y, maxWidth, lineHeight);
+
+                                    // Descrição do serviço ou promoção
+                                    if (text.length <= 22)
                                         y = 250;
+                                    else
+                                        y = 270;
                                     lineHeight = 24;
                                     text = CardData.desc;
                                     ctx.font = '18px Avenir Book';
@@ -209,15 +281,8 @@ $(function() {
                                     wrapText(ctx, text, x, y, maxWidth, lineHeight);
 
                                     // Contato
-                                    y = 400;
+                                    y = 445;
                                     text = 'Contato: ' + CardData.phone;
-                                    ctx.font = '16px Avenir Book';
-                                    ctx.fillStyle = '#282d39';
-                                    wrapText(ctx, text, x, y, maxWidth, lineHeight);
-
-                                    // Entrega
-                                    y = 430;
-                                    text = CardData.delivery;
                                     ctx.font = '16px Avenir Book';
                                     ctx.fillStyle = '#282d39';
                                     wrapText(ctx, text, x, y, maxWidth, lineHeight);
@@ -266,7 +331,7 @@ $(function() {
 
 const Color = {
     azul: "#379abb",
-    amarelo: "#ffff00",
+    cinza: "#9e9e9e",
     verde: "#008000",
     laranja: "#d79f2e",
     vermelho: "#c64548",
@@ -276,8 +341,8 @@ const Color = {
             case 'azul':
                 return this.azul;
                 break;
-            case 'amarelo':
-                return this.amarelo;
+            case 'cinza':
+                return this.cinza;
                 break;
             case 'verde':
                 return this.verde;
@@ -328,8 +393,73 @@ const Effects = {
         $(close).removeClass('active');
         $(close).hide();
         $(open).fadeIn(500);
-    }
+    },
 
+};
+
+const ImageInputFileFunctions = {
+
+    readURL: function(input) {
+        var url = input.value;
+        var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
+        if (input.files && input.files[0]&& (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#card-placeholder').css('background-image', 'url(' + e.target.result + ')');
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    },
+
+    drawImageProp: function(ctx, img, x, y, w, h, offsetX, offsetY) {
+
+        if (arguments.length === 2) {
+            x = y = 0;
+            w = ctx.canvas.width;
+            h = ctx.canvas.height;
+        }
+
+        // default offset is center
+        offsetX = typeof offsetX === "number" ? offsetX : 0.5;
+        offsetY = typeof offsetY === "number" ? offsetY : 0.5;
+
+        // keep bounds [0.0, 1.0]
+        if (offsetX < 0) offsetX = 0;
+        if (offsetY < 0) offsetY = 0;
+        if (offsetX > 1) offsetX = 1;
+        if (offsetY > 1) offsetY = 1;
+
+        var iw = img.width,
+            ih = img.height,
+            r = Math.min(w / iw, h / ih),
+            nw = iw * r,   // new prop. width
+            nh = ih * r,   // new prop. height
+            cx, cy, cw, ch, ar = 1;
+
+        // decide which gap to fill
+        if (nw < w) ar = w / nw;
+        if (Math.abs(ar - 1) < 1e-14 && nh < h) ar = h / nh;  // updated
+        nw *= ar;
+        nh *= ar;
+
+        // calc source rectangle
+        cw = iw / (nw / w);
+        ch = ih / (nh / h);
+
+        cx = (iw - cw) * offsetX;
+        cy = (ih - ch) * offsetY;
+
+        // make sure source rectangle is valid
+        if (cx < 0) cx = 0;
+        if (cy < 0) cy = 0;
+        if (cw > iw) cw = iw;
+        if (ch > ih) ch = ih;
+
+        // fill image in dest. rectangle
+        ctx.drawImage(img, cx, cy, cw, ch,  x, y, w, h);
+    }
 };
 
 const CardData = {
@@ -347,7 +477,6 @@ const CardData = {
             this.name = $('#name-form').val();
             this.desc = $('#desc-form').val();
             this.phone = $('#phone-form').val();
-            this.delivery = $('#delivery-form').val();
             this.email = $('#email-form').val();
             this.newsletter = $('#newsletter-form').is(':checked');
         } catch (e) {
@@ -377,12 +506,50 @@ const CardData = {
 
 };
 
+const CardPreview = {
+    updateTextPreview: function (field) {
+        const idField = $(field).attr('id');
+
+        switch (idField) {
+            case 'name-form':
+                $("#card-placeholder .name").text(field.value);
+                break;
+            case 'desc-form':
+                $("#card-placeholder .desc").text(field.value);
+                break;
+            case 'phone-form':
+                $("#card-placeholder .phone").text("Contato: " + field.value);
+                break;
+        }
+    },
+
+    updateColorPreview: function () {
+        const color = Color.getDefaultColor();
+        $("#card-placeholder .rectangle-bg").css('background-color', color);
+    },
+
+    updateLayoutPreview: function (element) {
+        const layout = element.value;
+        switch (layout) {
+            case 'left':
+                $("#card-placeholder, #card-placeholder .black-line, #card-placeholder .footer-info").removeClass('right').removeClass('bottom').addClass(layout);
+                break;
+            case 'right':
+                $("#card-placeholder, #card-placeholder .black-line, #card-placeholder .footer-info").removeClass('left').removeClass('bottom').addClass(layout);
+                break;
+            case 'bottom':
+                $("#card-placeholder, #card-placeholder .black-line, #card-placeholder .footer-info").removeClass('left').removeClass('right').addClass(layout);
+                break;
+        }
+    }
+};
+
 const FinalCard = {
     downloadCard: function () {
         var canvas = document.getElementById("card-canvas");
         image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
         var link = document.createElement('a');
-        link.download = "my-image.png";
+        link.download = CardData.name.toLowerCase() + "-feito-por-promovame.png";
         link.href = image;
         link.click();
     },
@@ -466,21 +633,6 @@ const Validation = {
                 return false;
 
             }
-
-        }
-
-        // Validate Delivery
-        if (!$("#delivery-form").val()) {
-
-            Util.addError(this.errorFormElement, 'Informe a região de entrega/atendimento ou seu endereço');
-            Util.addRedBorderOnErrorInput('#delivery-form');
-            return false;
-
-        } else {
-
-            var str = $("#delivery-form").val();
-            str = str.replace(/\n/g, "");
-            $("#delivery-form").val(str);
 
         }
 

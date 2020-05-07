@@ -1,6 +1,6 @@
 <!-- Section Preview Content  -->
 <?php
-$colors = array('Azul','Amarelo','Laranja','Verde','Vermelho');
+$colors = array('Azul','Cinza','Laranja','Verde','Vermelho');
 ?>
 <section class="preview-content" id="preview-content">
     <div class="container">
@@ -22,24 +22,22 @@ $colors = array('Azul','Amarelo','Laranja','Verde','Vermelho');
                         <form id="form-generate-card">
 
                             <div class="form-group">
-                                <input type="text" placeholder="Seu nome ou da sua empresa" tabindex="1" class="form-control" id="name-form" maxlength="30" required="required">
+                                <input type="text" placeholder="Seu nome ou da sua empresa" tabindex="1" class="form-control" id="name-form" maxlength="30" required="required" onchange="CardPreview.updateTextPreview(this)">
                             </div>
                             <div class="form-group">
-                                <textarea rows="2" cols="50" placeholder="Descrição do produto ou serviço" class="form-control" id="desc-form" maxlength="60" required="required"></textarea>
+                                <textarea rows="2" cols="50" placeholder="Descreva seu produto ou negócio" tabindex="2" class="form-control" id="desc-form" maxlength="80" required="required" onchange="CardPreview.updateTextPreview(this)"></textarea>
                             </div>
                             <div class="form-group">
-                                <input type="tel" placeholder="Telefone para contato" tabindex="3" class="form-control" id="phone-form" required="required">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" placeholder="Região de entrega" tabindex="4" class="form-control" id="delivery-form" required="required">
+                                <input type="tel" placeholder="Telefone para contato" tabindex="3" class="form-control" id="phone-form" required="required" onchange="CardPreview.updateTextPreview(this)">
                             </div>
                             <div class="form-group">
                                 <input type="email" placeholder="E-mail" class="form-control" tabindex="5" id="email-form" required="required">
                             </div>
                             <div class="form-group">
-                                <select class="form-control" id="layout-form" tabindex="6">
-                                    <option selected disabled value="">Selecione onde ficará suas informações</option>
+                                <select class="form-control" id="layout-form" tabindex="6" onchange="CardPreview.updateColorPreview(this)">
+                                    <option selected disabled value="">Selecione o lado onde ficará suas informações</option>
                                     <option value="left">Esquerda</option>
+                                    <option value="bottom">Meio</option>
                                     <option value="right">Direita</option>
                                 </select>
                             </div>
@@ -96,7 +94,7 @@ $colors = array('Azul','Amarelo','Laranja','Verde','Vermelho');
                             </div>
 
                             <a class="cta cta-orange" id="back-to-generate">
-                                <span>Gerar novamente</span>
+                                <span>Refazer cartão</span>
                             </a>
                         </div>
                         <!-- Modal -->
@@ -124,7 +122,18 @@ $colors = array('Azul','Amarelo','Laranja','Verde','Vermelho');
 
                 <div class="col-md-6 canvas-content">
                     <canvas class="card-canvas" id="card-canvas"> </canvas>
-                    <img src="/assets/images/placeholder-left.png" alt="" class="placeholder" id="card-placeholder">
+
+                    <div class="card-placeholder left" id="card-placeholder">
+                        <div class="rectangle-bg red"></div>
+                        <hr class="black-line left">
+                        <div class="rectangle-infos">
+                            <h1 class="name">Nome da Empresa</h1>
+                            <h3 class="desc">Descrição do produto ou serviço</h3>
+                            <h4 class="phone">Contato: (99) 99999-9999</h4>
+                        </div>
+                        <h5 class="footer-info left">Imagem gerada por https://promova.me</h5>
+                    </div>
+
                     <div class="look-how">
                         <h5>Insira as informações e veja como ficará sua imagem</h5>
                         <i class="fa fa-eye" aria-hidden="true"></i>
@@ -146,7 +155,7 @@ $colors = array('Azul','Amarelo','Laranja','Verde','Vermelho');
                     </div>
 
                     <a class="cta cta-orange" id="back-to-generate-mobile">
-                        <span>Gerar novamente</span>
+                        <span>Refazer cartão</span>
                     </a>
                 </div>
 

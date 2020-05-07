@@ -762,6 +762,283 @@ section.preview-content .canvas-content canvas {
 section.preview-content .canvas-content img.placeholder {
   max-width: 500px;
   width: 100%;
+  padding-top: 10px;
+}
+section.preview-content .canvas-content .card-placeholder {
+  max-width: 500px;
+  width: 100%;
+  min-height: 500px;
+  max-height: 500px;
+  height: 100%;
+  background-image: url("/assets/images/default-img-600x600.png");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+@media screen and (max-width: 1200px) {
+  section.preview-content .canvas-content .card-placeholder {
+    max-width: 400px;
+    min-height: 400px;
+    max-height: 400px;
+  }
+}
+@media screen and (max-width: 991px) {
+  section.preview-content .canvas-content .card-placeholder {
+    max-width: 285px;
+    max-height: 285px;
+    min-height: 285px;
+  }
+}
+@media screen and (max-width: 768px) {
+  section.preview-content .canvas-content .card-placeholder {
+    height: 285px;
+    min-height: inherit;
+  }
+}
+@media screen and (max-width: 350px) {
+  section.preview-content .canvas-content .card-placeholder {
+    height: 82vw;
+    width: 82vw;
+  }
+}
+section.preview-content .canvas-content .card-placeholder.left .rectangle-infos {
+  top: 17%;
+  max-height: 66%;
+  left: 5%;
+  text-align: left;
+}
+section.preview-content .canvas-content .card-placeholder.left .rectangle-bg {
+  float: left;
+}
+section.preview-content .canvas-content .card-placeholder.right .rectangle-infos {
+  top: 17%;
+  max-height: 66%;
+  right: 5%;
+  text-align: left;
+}
+section.preview-content .canvas-content .card-placeholder.right .rectangle-bg {
+  float: right;
+  right: 0;
+}
+section.preview-content .canvas-content .card-placeholder.bottom .rectangle-infos {
+  width: 68%;
+  max-height: 28%;
+  left: 16%;
+  text-align: left;
+  bottom: 6%;
+  padding: 15px 18px;
+}
+@media screen and (max-width: 991px) {
+  section.preview-content .canvas-content .card-placeholder.bottom .rectangle-infos {
+    padding: 16px;
+  }
+}
+@media screen and (max-width: 420px) {
+  section.preview-content .canvas-content .card-placeholder.bottom .rectangle-infos {
+    padding: 10px;
+  }
+}
+section.preview-content .canvas-content .card-placeholder.bottom .rectangle-infos .name {
+  padding-bottom: 10px;
+  font-size: 26px;
+}
+@media screen and (max-width: 1200px) {
+  section.preview-content .canvas-content .card-placeholder.bottom .rectangle-infos .name {
+    font-size: 26px;
+  }
+}
+@media screen and (max-width: 991px) {
+  section.preview-content .canvas-content .card-placeholder.bottom .rectangle-infos .name {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+@media screen and (max-width: 420px) {
+  section.preview-content .canvas-content .card-placeholder.bottom .rectangle-infos .name {
+    font-size: 3.6vw;
+    padding-bottom: 4px;
+  }
+}
+section.preview-content .canvas-content .card-placeholder.bottom .rectangle-infos .desc {
+  font-size: 14px;
+}
+@media screen and (max-width: 1200px) {
+  section.preview-content .canvas-content .card-placeholder.bottom .rectangle-infos .desc {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 991px) {
+  section.preview-content .canvas-content .card-placeholder.bottom .rectangle-infos .desc {
+    font-size: 9px;
+  }
+}
+@media screen and (max-width: 420px) {
+  section.preview-content .canvas-content .card-placeholder.bottom .rectangle-infos .desc {
+    font-size: 2.2vw;
+  }
+}
+@media screen and (max-width: 420px) {
+  section.preview-content .canvas-content .card-placeholder.bottom .rectangle-infos .phone {
+    top: 81%;
+  }
+}
+section.preview-content .canvas-content .card-placeholder.bottom .rectangle-bg {
+  bottom: 0;
+  width: 100%;
+  height: 24%;
+  position: absolute;
+}
+section.preview-content .canvas-content .card-placeholder .rectangle-bg {
+  position: relative;
+  width: 25%;
+  height: 100%;
+  background-color: #c64548;
+}
+section.preview-content .canvas-content .card-placeholder hr.black-line {
+  border-top: 7px solid #000;
+  position: relative;
+  z-index: 1;
+  max-width: 42%;
+  margin: 0;
+}
+@media screen and (max-width: 991px) {
+  section.preview-content .canvas-content .card-placeholder hr.black-line {
+    border-top: 5px solid #000;
+  }
+}
+@media screen and (max-width: 350px) {
+  section.preview-content .canvas-content .card-placeholder hr.black-line {
+    border-top: 3px solid #000;
+  }
+}
+section.preview-content .canvas-content .card-placeholder hr.black-line.left {
+  left: 0;
+  top: 67%;
+}
+section.preview-content .canvas-content .card-placeholder hr.black-line.right {
+  right: 0;
+  top: 67%;
+  margin: 0 0 0 auto;
+}
+section.preview-content .canvas-content .card-placeholder hr.black-line.bottom {
+  left: 0;
+  top: 87%;
+  margin: 0;
+  max-width: 76%;
+}
+section.preview-content .canvas-content .card-placeholder .rectangle-infos {
+  width: 42%;
+  background-color: white;
+  height: 100%;
+  position: absolute;
+  padding: 24px 21px;
+  color: #282d39;
+}
+@media screen and (max-width: 991px) {
+  section.preview-content .canvas-content .card-placeholder .rectangle-infos {
+    padding: 16px;
+  }
+}
+@media screen and (max-width: 350px) {
+  section.preview-content .canvas-content .card-placeholder .rectangle-infos {
+    padding: 12px;
+  }
+}
+section.preview-content .canvas-content .card-placeholder .rectangle-infos .name {
+  font-family: "Avenir Black";
+  font-size: 30px;
+  line-height: 32px;
+  padding-bottom: 22px;
+}
+@media screen and (max-width: 1200px) {
+  section.preview-content .canvas-content .card-placeholder .rectangle-infos .name {
+    font-size: 26px;
+  }
+}
+@media screen and (max-width: 991px) {
+  section.preview-content .canvas-content .card-placeholder .rectangle-infos .name {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+@media screen and (max-width: 350px) {
+  section.preview-content .canvas-content .card-placeholder .rectangle-infos .name {
+    font-size: 5vw;
+  }
+}
+section.preview-content .canvas-content .card-placeholder .rectangle-infos .desc {
+  font-family: "Avenir Book";
+  font-size: 15px;
+}
+@media screen and (max-width: 1200px) {
+  section.preview-content .canvas-content .card-placeholder .rectangle-infos .desc {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 991px) {
+  section.preview-content .canvas-content .card-placeholder .rectangle-infos .desc {
+    font-size: 9px;
+  }
+}
+@media screen and (max-width: 350px) {
+  section.preview-content .canvas-content .card-placeholder .rectangle-infos .desc {
+    font-size: 3vw;
+  }
+}
+section.preview-content .canvas-content .card-placeholder .rectangle-infos .phone {
+  position: absolute;
+  line-height: 20px;
+  font-family: "Avenir Book";
+  font-size: 13px;
+  max-width: 200px;
+}
+@media screen and (max-width: 1200px) {
+  section.preview-content .canvas-content .card-placeholder .rectangle-infos .phone {
+    font-size: 11px;
+  }
+}
+@media screen and (max-width: 991px) {
+  section.preview-content .canvas-content .card-placeholder .rectangle-infos .phone {
+    font-size: 8px;
+    line-height: 14px;
+  }
+}
+@media screen and (max-width: 350px) {
+  section.preview-content .canvas-content .card-placeholder .rectangle-infos .phone {
+    font-size: 2.3vw;
+  }
+}
+section.preview-content .canvas-content .card-placeholder .rectangle-infos .phone {
+  top: 83%;
+}
+section.preview-content .canvas-content .card-placeholder .footer-info {
+  color: #ffffff;
+  font-family: "Avenir Book";
+  font-size: 8px;
+  position: absolute;
+  bottom: 0;
+  margin: 10px;
+  max-width: 74px;
+}
+@media screen and (max-width: 991px) {
+  section.preview-content .canvas-content .card-placeholder .footer-info {
+    font-size: 6px;
+  }
+}
+section.preview-content .canvas-content .card-placeholder .footer-info.left {
+  left: 0;
+}
+section.preview-content .canvas-content .card-placeholder .footer-info.right {
+  right: 0;
+}
+section.preview-content .canvas-content .card-placeholder .footer-info.bottom {
+  left: 0;
+  max-width: inherit;
+}
+@media screen and (max-width: 420px) {
+  section.preview-content .canvas-content .card-placeholder .footer-info.bottom {
+    margin: 5px;
+  }
 }
 section.preview-content .canvas-content .look-how {
   display: flex;
