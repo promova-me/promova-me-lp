@@ -37,7 +37,7 @@ $colors = array('Azul','Cinza','Laranja','Verde','Vermelho');
                                 <select class="form-control" id="layout-form" tabindex="6" onchange="CardPreview.updateColorPreview(this)">
                                     <option selected disabled value="">Selecione o lado onde ficará suas informações</option>
                                     <option value="left">Esquerda</option>
-                                    <option value="bottom">Meio</option>
+                                    <option value="bottom">Abaixo</option>
                                     <option value="right">Direita</option>
                                 </select>
                             </div>
