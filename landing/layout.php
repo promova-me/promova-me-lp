@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+
+$cookie_name = "src";
+$cookie_value = $_GET['src'];
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+?>
 <html lang="pt-br">
 <head>
     <!-- Google Tag Manager -->

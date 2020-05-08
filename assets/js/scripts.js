@@ -725,7 +725,7 @@ const Util = {
     },
 
     initMasks: function () {
-        $('#phone-form').mask('(99) 99999-9999');
+        $('#phone-form').mask('(99) 999999999');
     }
 
 };

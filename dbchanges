@@ -1,0 +1,1 @@
+ALTER TABLE `company` ADD `src` VARCHAR(200) NULL DEFAULT NULL AFTER `newsletter`;
