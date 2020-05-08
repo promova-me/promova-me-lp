@@ -1,6 +1,5 @@
 <?php
 //var_dump($_POST);
-
 try {
 //    $pdo = new PDO('mysql:host=localhost;dbname=promovam_db', 'promovam_admin', '@pR0mOv4M3#');
     $pdo = new PDO('mysql:host=localhost;dbname=promovam_db', 'root', '');
