@@ -5,7 +5,6 @@ $cookie_name = "src";
 $cookie_value = $_GET['src'];
 session_start();
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-echo $_COOKIE['src'];
 ?>
 <html lang="pt-br">
 <head>
