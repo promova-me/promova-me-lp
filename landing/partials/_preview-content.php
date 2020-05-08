@@ -104,11 +104,11 @@ $colors = array('Azul','Cinza','Laranja','Verde','Vermelho');
                                 <!-- Modal content-->
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h4 class="modal-title"><strong>Compartilhe seu cartão!</strong></h4>
+                                        <h4 class="modal-title"><strong>O download o do seu cartão já foi concluído!</strong></h4>
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     </div>
                                     <div class="modal-body">
-                                        <p>Você pode promover o seu negócio postando o cartão nos stories do Instagram, Facebook e Whatsapp para as pessoas conhecerem mais sobre seu negócio! Não deixe também de enviar para possíveis clientes que poderiam se interessar pela sua empresa.</p>
+                                        <p>Agora envie para seus clientes e boas vendas ;)</p>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Entendi</button>
