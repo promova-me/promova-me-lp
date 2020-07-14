@@ -22,6 +22,8 @@
 @text-gray-4: #4e6363;
 @blue-focus: #80bdff;
 @red-error: #F3637A;
+@purple-negocio-ao-lado: #3d2c60;
+@pink-negocio-ao-lado: #fa006e;
 
 @font-family: "Avenir Book", "ff-prater-sans-web","OpenSans", "Open Sans";
 
@@ -117,6 +119,19 @@ textarea {
         background-color: @orange-complement;
         span {
             color: @white;
+        }
+        &:hover {
+            background-color: lighten(@orange-complement, 10%);
+        }
+    }
+
+    &-negocio-ao-lado {
+        background-color: @purple-negocio-ao-lado;
+        span {
+            color: @white;
+        }
+        &:hover {
+            background-color: lighten(@purple-negocio-ao-lado, 10%);
         }
     }
 }

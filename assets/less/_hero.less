@@ -31,6 +31,28 @@ section.hero {
         >.container {
             position: relative;
         }
+
+        &.overlay-pink {
+            position: relative;
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                opacity: .85; // background: rgba(0,196,255,1);
+                background: #379abb;
+                background: -moz-linear-gradient(45deg, #379abb  0%, #fa006e 100%);
+                background: -webkit-gradient(left bottom, right top, color-stop(0%, #379abb), color-stop(100%, #fa006e));
+                background: -webkit-linear-gradient(45deg, #379abb 0%, #fa006e 100%);
+                background: -o-linear-gradient(45deg, #379abb 0%, #fa006e 100%);
+                background: -ms-linear-gradient(45deg, #379abb 0%, #fa006e 100%);
+                background: linear-gradient(45deg, #379abb 0%, #fa006e 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#379abb', endColorstr='#fa006e', GradientType=1);
+            }
+        }
+
         &.overlay {
             position: relative;
             &:before {

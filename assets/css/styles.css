@@ -83,6 +83,18 @@ textarea {
 .cta-orange span {
   color: #ffffff;
 }
+.cta-orange:hover {
+  background-color: #dfb359;
+}
+.cta-negocio-ao-lado {
+  background-color: #3d2c60;
+}
+.cta-negocio-ao-lado span {
+  color: #ffffff;
+}
+.cta-negocio-ao-lado:hover {
+  background-color: #533c83;
+}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -116,6 +128,17 @@ header .navbar {
 header .navbar .left img {
   width: 100%;
   max-width: 200px;
+}
+header .navbar .left img.negocio-ao-lado {
+  max-width: 220px;
+  position: relative;
+  top: 7px;
+}
+@media screen and (max-width: 767px) {
+  header .navbar .left img.negocio-ao-lado {
+    top: 10px;
+    margin-bottom: 15px;
+  }
 }
 @media screen and (max-width: 767px) {
   header .navbar .right {
@@ -187,6 +210,26 @@ section.hero .ftco-cover-1 .container > .row {
 }
 section.hero .ftco-cover-1 > .container {
   position: relative;
+}
+section.hero .ftco-cover-1.overlay-pink {
+  position: relative;
+}
+section.hero .ftco-cover-1.overlay-pink:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: .85;
+  background: #379abb;
+  background: -moz-linear-gradient(45deg, #379abb 0%, #fa006e 100%);
+  background: -webkit-gradient(left bottom, right top, color-stop(0%, #379abb), color-stop(100%, #fa006e));
+  background: -webkit-linear-gradient(45deg, #379abb 0%, #fa006e 100%);
+  background: -o-linear-gradient(45deg, #379abb 0%, #fa006e 100%);
+  background: -ms-linear-gradient(45deg, #379abb 0%, #fa006e 100%);
+  background: linear-gradient(45deg, #379abb 0%, #fa006e 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#379abb', endColorstr='#fa006e', GradientType=1);
 }
 section.hero .ftco-cover-1.overlay {
   position: relative;
@@ -1054,6 +1097,9 @@ footer {
   background-color: #379abb;
   min-height: 100px;
 }
+footer.pink {
+  background-color: #fa006e;
+}
 footer .container {
   display: flex;
   padding: 50px 0 30px;
@@ -1084,6 +1130,18 @@ footer .container .back-to-top {
   z-index: 10;
   top: -35px;
   line-height: 14px;
+}
+footer .container .back-to-top.purple {
+  border: 1px solid #3d2c60;
+}
+footer .container .back-to-top.purple span {
+  color: #3d2c60;
+}
+footer .container .back-to-top.purple:hover {
+  border: 1px solid #533c83;
+}
+footer .container .back-to-top.purple:hover span {
+  color: #533c83;
 }
 footer .container .back-to-top span {
   color: #379abb;
@@ -1146,6 +1204,12 @@ footer .container .left {
 footer .container .left .image-logo {
   max-width: 200px;
 }
+footer .container .left .image-logo.negocio-ao-lado {
+  max-width: 240px;
+}
+footer .container .left .image-logo.negocio-ao-lado img {
+  border: none;
+}
 footer .container .left .image-logo img {
   width: 100%;
   background-color: #ffffff;
@@ -1159,6 +1223,10 @@ footer .container .left h5 {
   font-family: "Avenir Book";
   padding-top: 5px;
 }
+footer .container .left h5.negocio-ao-lado {
+  max-width: 240px;
+  text-align: center;
+}
 footer .additional_info {
   height: 30px;
   background-color: rgba(40, 45, 57, 0.1);
@@ -1166,6 +1234,13 @@ footer .additional_info {
   font-size: 13px;
   font-weight: 600;
   width: 100%;
+}
+footer .additional_info.pink {
+  background-color: #c70058;
+}
+footer .additional_info.pink p {
+  color: white;
+  opacity: 0.8;
 }
 @media screen and (max-width: 1320px) {
   footer .additional_info {
